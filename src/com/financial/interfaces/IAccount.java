@@ -3,6 +3,7 @@ package com.financial.interfaces;
 import java.util.List;
 
 import com.financial.account.Entry;
+import com.financial.customers.ICustomer;
 
 public interface IAccount {
 
@@ -19,4 +20,8 @@ public interface IAccount {
 	public void setEntryList(List<Entry> entryList);
 	public double getTotalBalance();
 	public void setTotalBalance(double totalBalance);
+	public void setAccountHolder(ICustomer accountHolder);
+	public ICustomer getAccountHolder();
+	public String getAccountType();
+	public void setAccountType(String accountType);
 }

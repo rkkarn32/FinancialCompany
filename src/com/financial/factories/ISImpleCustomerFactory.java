@@ -1,6 +1,6 @@
 package com.financial.factories;
 
-import com.financial.interfaces.ICustomer;
+import com.financial.customers.ICustomer;
 
 public interface ISImpleCustomerFactory {
 	ICustomer createCustomer();

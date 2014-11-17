@@ -1,10 +1,13 @@
 package com.financial.customers;
 
-import com.financial.utilities.CommonResources;
-
 public class Company extends Customer implements ICompany {
 	private int numofEmp;
-
+	
+	
+	public Company() {
+		// TODO Auto-generated constructor stub
+		
+	}
 	public int getNumofEmp() {
 		return numofEmp;
 	}

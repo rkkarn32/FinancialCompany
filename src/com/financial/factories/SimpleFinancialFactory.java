@@ -1,5 +1,7 @@
 package com.financial.factories;
 
+import com.financial.utilities.Utility;
+
 public interface SimpleFinancialFactory {
-	AbstractFinancialFactory createFinancilaFactory( String choice);
+	AbstractFinancialFactory createFinancilaFactory(Utility utility);
 }

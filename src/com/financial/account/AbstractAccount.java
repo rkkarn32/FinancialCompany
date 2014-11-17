@@ -14,9 +14,10 @@ public abstract class AbstractAccount implements IAccount{
 	private double totalBalance;
 	private ICustomer accountHolder;
 	private String accountType;
+	private static int counter = 1000;
 
 	public AbstractAccount(String accountNumber, double initialBalance){
-		this.accountNumber = accountNumber;
+		this.accountNumber = counter + this.accountType;
 		this.totalBalance  = initialBalance;
 		this.entryList     = new ArrayList<Entry>();
 	}

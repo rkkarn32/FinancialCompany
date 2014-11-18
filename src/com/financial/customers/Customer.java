@@ -61,6 +61,11 @@ public abstract class Customer implements ICustomer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	@Override
+	public String toString() {
+		return "Name: " + getName() + "Type of Customer: " + getType() + "Email: " + getEmail();
+	}
 
 	@Override
 	public void showInfo() {

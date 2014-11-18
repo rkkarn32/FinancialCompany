@@ -8,5 +8,6 @@ public interface ICustomer {
 	void removeAccount(IAccount account);
 	void update();
 	String getType();
+	String toString();
 	
 }

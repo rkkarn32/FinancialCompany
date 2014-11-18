@@ -10,5 +10,5 @@ public interface ICustomer {
 	public String getEmail();
 	String getType();
 	String toString();
-	
+	public String getName();
 }

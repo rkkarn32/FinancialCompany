@@ -20,15 +20,5 @@ public class Account extends AbstractAccount {
 	public void setInterestRate(double interestRate) {
 		super.setInterestRate(interestRate);
 	}
-
-	public String hasToSendMail(Entry entry) {
-		if (this.getBalance() < 0) {
-			return "Balance is negative";
-		}
-		return null;
-	}
-	
-	
-	
 	
 }

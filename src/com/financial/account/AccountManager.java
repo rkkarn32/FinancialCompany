@@ -6,35 +6,39 @@ import java.util.List;
 
 import com.financial.interfaces.IAccount;
 
-public class AccountManager{
+public class AccountManager {
 
-	private List<IAccount> accountList = new ArrayList<IAccount>();
-	
-	public void addAccount(IAccount newAccount){
+	static AccountManager accountManager = new AccountManager();
+	private List<IAccount> accountList;
+
+	public AccountManager() {
+		accountList = new ArrayList<IAccount>();
+	}
+
+	public void addAccount(IAccount newAccount) {
 		this.accountList.add(newAccount);
 	}
-	
-	public void removeAccount(IAccount account){
+
+	public void removeAccount(IAccount account) {
 		this.accountList.remove(account);
 	}
-	
-	public List<IAccount> getAccountList(){
+
+	public List<IAccount> getAccountList() {
 		return this.accountList;
 	}
-	
-	public void addInterest(Functor functor){
+
+	public void addInterest(Functor functor) {
 		Iterator<IAccount> it = this.accountList.iterator();
-		while(it.hasNext()){
+		while (it.hasNext()) {
 			IAccount account = it.next();
 			functor.compute(account);
 		}
 	}
-	
-	public IAccount getAccountByAccountNumber(String accountNumber){
+	public IAccount getAccountByAccountNumber(String accountNumber) {
 		Iterator<IAccount> it = this.accountList.iterator();
-		while(it.hasNext()){
+		while (it.hasNext()) {
 			IAccount account = it.next();
-			if(account.getAccountNumber().equals(accountNumber)){
+			if (account.getAccountNumber().equals(accountNumber)) {
 				return account;
 			}
 		}

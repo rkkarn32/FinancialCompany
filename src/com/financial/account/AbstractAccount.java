@@ -22,11 +22,12 @@ public abstract class AbstractAccount implements IAccount {
 
 	private static int counter = 1000;
 
-	public AbstractAccount(String accountNumber, double initialBalance) {
+	public AbstractAccount(double initialBalance) {
 		this.accountNumber = counter + this.accountType;
 		this.totalBalance = initialBalance;
 		this.entryList = new ArrayList<Entry>();
 		this.vector = new Vector<>();
+		counter++;
 	}
 
 	public boolean deposite(double amount) {

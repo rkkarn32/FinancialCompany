@@ -17,7 +17,7 @@ public class CCard extends AbstractAccount {
 	// previous balance: balance from last month
 	// total charges: total of all charges for this month
 	// total credits: total of all payments for this month
-	// new balance = previous balance – total credits + total charges + MI *
+	// new balance = previous balance ï¿½ total credits + total charges + MI *
 	// (previous balance
 	// total credits)
 	// total due = MP * new balance
@@ -53,8 +53,8 @@ public class CCard extends AbstractAccount {
 	}
 	
 
-	public CCard(String accountNumber, double initialBalance) {
-		super(accountNumber, initialBalance);
+	public CCard(double initialBalance) {
+		super(initialBalance);
 
 	}
 

@@ -1,7 +1,6 @@
 package com.financial.factories;
 import com.financial.utilities.CommonResources;
-import com.financial.utilities.CommonResources.ACCOUNT;
-import com.financial.utilities.CommonResources.FACTORY;
+
 
 public class SimpleFinancialFactory {
 	

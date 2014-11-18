@@ -49,6 +49,12 @@ public abstract class AbstractFrm extends JFrame{
 			mainPanel.add(button);
 		
 	}
+	
+	public void updateView(DefaultTableModel model){
+		if(model!=null)
+		this.table.setModel(model);
+		repaint();
+	}
 		
 	/*
 	 * (non-Javadoc)
@@ -59,6 +65,7 @@ public abstract class AbstractFrm extends JFrame{
 		super.setSize(wiegth, height);
 	}
 	public abstract List<JButton> getButtons();
+	public abstract List<JButton> getButtonList();
 	public abstract DefaultTableModel getModel();
 	
 	private JPanel mainPanel;

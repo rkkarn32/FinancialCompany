@@ -22,11 +22,11 @@ public class AccountManager{
 		return this.accountList;
 	}
 	
-	public void addInterest(){
+	public void addInterest(Functor functor){
 		Iterator<IAccount> it = this.accountList.iterator();
 		while(it.hasNext()){
 			IAccount account = it.next();
-			account.addInterest();
+			functor.compute(account);
 		}
 	}
 	

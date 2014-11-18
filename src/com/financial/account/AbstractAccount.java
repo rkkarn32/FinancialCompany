@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 
 import com.financial.customers.ICustomer;
 import com.financial.interfaces.IAccount;
@@ -17,6 +18,7 @@ public abstract class AbstractAccount implements IAccount {
 	private ICustomer accountHolder;
 	private String accountType;
 	private double interestRate;
+	private Vector vector;
 
 	private static int counter = 1000;
 
@@ -24,6 +26,7 @@ public abstract class AbstractAccount implements IAccount {
 		this.accountNumber = counter + this.accountType;
 		this.totalBalance = initialBalance;
 		this.entryList = new ArrayList<Entry>();
+		this.vector = new Vector<>();
 	}
 
 	public boolean deposite(double amount) {
@@ -89,6 +92,19 @@ public abstract class AbstractAccount implements IAccount {
 	public String toString() {
 		return "Account{" + "acctNumber=" + this.accountNumber + ", balance="
 				+ this.totalBalance + '}';
+	}
+
+	public Vector getVector() {
+
+		vector.add(this.accountNumber);
+		vector.add(this.accountHolder.getName());
+		vector.add(this.totalBalance);
+		for (Iterator<Entry> it = this.entryList.iterator(); it.hasNext();) {
+			Entry entry = it.next();
+			vector.add(entry);
+		}
+
+		return this.vector;
 	}
 
 	public String hasToSendMail(Entry entry) {

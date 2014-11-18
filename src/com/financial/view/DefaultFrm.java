@@ -15,21 +15,24 @@ public class DefaultFrm extends AbstractFrm {
 	
 	
 
-	private JButton buttonDeposite = new JButton();
-	private JButton buttonWithDraw = new JButton();
-	private JButton buttonAddInterest= new JButton();
+	private JButton buttonDeposite;// = new JButton();
+	private JButton buttonWithDraw;// = new JButton();
+	private JButton buttonAddInterest;//= new JButton();
 	private JButton buttonExit;
 	private JButton buttonAddAccount;
+	
+	private List <JButton> buttonList;
 	
 	public DefaultFrm(String title) {
 		super(title);
 		setSize(600, 310);
+		
 	}
 
 	@Override
 	public List<JButton> getButtons() {
 		
-		List <JButton> buttonList = new ArrayList<JButton>();
+		buttonList = new ArrayList<JButton>();
 		
 		buttonDeposite = new JButton();
 		buttonWithDraw = new JButton();
@@ -39,73 +42,34 @@ public class DefaultFrm extends AbstractFrm {
 		
 		buttonDeposite.setText("Deposit");
 		buttonDeposite.setBounds(468,104,96,33);
-		buttonDeposite.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				buttonDeposite_ActionPerfomed(arg0);
-			}
-		});
 		buttonList.add(buttonDeposite);
 		
 		buttonWithDraw.setText("Withdraw");
 		buttonWithDraw.setBounds(468,164,96,33);
-		buttonWithDraw.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				buttonWithdraw_ActionPerformed(arg0);
-			}
-		});
 		buttonList.add(buttonWithDraw);
 		
 		buttonAddInterest.setBounds(468,20,106,33);
 		buttonAddInterest.setText("Add interest");
-		buttonAddInterest.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				buttonAddInterest_ActionPerformed(arg0);
-			}
-		});
 		buttonList.add(buttonAddInterest);
 		
 		buttonExit.setText("Exit");
 		buttonExit.setBounds(468, 248,96,31);
-		buttonExit.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				buttonExit_ActionPerformed(e);
-			}
-		});
+		buttonList.add(buttonExit);
 		
+
 		buttonAddAccount.setText("Add Account");
 		buttonAddAccount.setBounds(50,20,192,33);
-		buttonAddAccount.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Account Will be added");
-				
-			}
-		});
 		buttonList.add(buttonAddAccount);
 		
-		buttonList.add(buttonExit);
 		return buttonList;
 	}
 	
-	public void buttonAddInterest_ActionPerformed(ActionEvent event){
-		System.out.println("Add interest is clicked");
+	@Override
+	public List<JButton> getButtonList() {
+		// TODO Auto-generated method stub
+		return this.buttonList;
 	}
-	public void buttonDeposite_ActionPerfomed(ActionEvent event){
-		System.out.println("Deposite is clicked");
-	}
-	public void buttonWithdraw_ActionPerformed(ActionEvent event){
-		System.out.println("Withdraw is clicked");
-	}
-	public void buttonExit_ActionPerformed(ActionEvent event){
-		System.exit(1);
-	}
+	
 	
 	@Override
 	public DefaultTableModel getModel() {
@@ -117,4 +81,30 @@ public class DefaultFrm extends AbstractFrm {
 		return model;
 	}
 
+
+	public JButton getButtonDeposite() {
+		return buttonDeposite;
+	}
+
+	public JButton getButtonWithDraw() {
+		return buttonWithDraw;
+	}
+
+	public JButton getButtonAddInterest() {
+		return buttonAddInterest;
+	}
+
+	public JButton getButtonExit() {
+		return buttonExit;
+	}
+
+	public JButton getButtonAddAccount() {
+		return buttonAddAccount;
+	}
+
+	
+
+	
+	
+	
 }

@@ -19,7 +19,7 @@ public class CommonResources {
 	}
 	
 	
-	public static enum Transaction{
+	public static enum TRANSACTION{
 		DEPOSITE, WITHDRAW, ADDINTEREST
 	}
 	

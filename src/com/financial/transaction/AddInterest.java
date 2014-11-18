@@ -4,9 +4,11 @@ import com.financial.interfaces.ITransaction;
 
 public class AddInterest implements ITransaction {
 
+	
 	@Override
 	public void transact() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
+		
 		
 	}
 

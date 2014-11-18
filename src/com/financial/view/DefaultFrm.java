@@ -15,9 +15,11 @@ public class DefaultFrm extends AbstractFrm {
 	
 	
 
-	JButton buttonDeposite = new JButton();
-	JButton buttonWithDraw = new JButton();
-	JButton buttonAddInterest= new JButton();
+	private JButton buttonDeposite = new JButton();
+	private JButton buttonWithDraw = new JButton();
+	private JButton buttonAddInterest= new JButton();
+	private JButton buttonExit;
+	private JButton buttonAddAccount;
 	
 	public DefaultFrm(String title) {
 		super(title);
@@ -32,6 +34,8 @@ public class DefaultFrm extends AbstractFrm {
 		buttonDeposite = new JButton();
 		buttonWithDraw = new JButton();
 		buttonAddInterest= new JButton();
+		buttonExit = new JButton();
+		buttonAddAccount = new JButton();
 		
 		buttonDeposite.setText("Deposit");
 		buttonDeposite.setBounds(468,104,96,33);
@@ -64,6 +68,29 @@ public class DefaultFrm extends AbstractFrm {
 		});
 		buttonList.add(buttonAddInterest);
 		
+		buttonExit.setText("Exit");
+		buttonExit.setBounds(468, 248,96,31);
+		buttonExit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				buttonExit_ActionPerformed(e);
+			}
+		});
+		
+		buttonAddAccount.setText("Add Account");
+		buttonAddAccount.setBounds(50,20,192,33);
+		buttonAddAccount.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Account Will be added");
+				
+			}
+		});
+		buttonList.add(buttonAddAccount);
+		
+		buttonList.add(buttonExit);
 		return buttonList;
 	}
 	
@@ -75,6 +102,9 @@ public class DefaultFrm extends AbstractFrm {
 	}
 	public void buttonWithdraw_ActionPerformed(ActionEvent event){
 		System.out.println("Withdraw is clicked");
+	}
+	public void buttonExit_ActionPerformed(ActionEvent event){
+		System.exit(1);
 	}
 	
 	@Override

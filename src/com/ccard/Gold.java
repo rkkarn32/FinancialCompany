@@ -1,6 +1,6 @@
 package com.ccard;
 
-public class Gold extends CCard {
+public class Gold extends CreditCardAccount {
 	
 	
 	public Gold(double initialBalance) {

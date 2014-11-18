@@ -1,6 +1,6 @@
 package com.ccard;
 
-public class Silver extends CCard{
+public class Silver extends CreditCardAccount{
 
 	public Silver(double initialBalance) {
 		super(initialBalance);

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class DefaultFrm extends AbstractFrm {
@@ -20,7 +21,7 @@ public class DefaultFrm extends AbstractFrm {
 	
 	public DefaultFrm(String title) {
 		super(title);
-		setSize(590, 370);
+		setSize(600, 310);
 	}
 
 	@Override
@@ -78,7 +79,12 @@ public class DefaultFrm extends AbstractFrm {
 	
 	@Override
 	public DefaultTableModel getModel() {
-		return null;
+		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("A/N");
+		model.addColumn("Name");
+		model.addColumn("Balance");
+		
+		return model;
 	}
 
 }

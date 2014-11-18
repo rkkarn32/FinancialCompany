@@ -18,7 +18,7 @@ public abstract class AbstractFrm extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private DefaultTableModel model= new DefaultTableModel();
+	private DefaultTableModel model;
 
 	/*
 	 * Constructor for set a default view

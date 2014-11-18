@@ -96,6 +96,7 @@ public class CCard extends AbstractAccount {
 				* (previousBalance - totalCredits);
 		
 		totalDue = MP * newBalance;
+		
 		System.out.println("Current Balance is " + newBalance);
 		System.out.println("Previous Balance for this month is "
 				+ previousBalance);

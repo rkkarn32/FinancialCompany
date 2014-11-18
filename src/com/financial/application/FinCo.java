@@ -25,7 +25,8 @@ public class FinCo {
 		    // Add the following code if you want the Look and Feel
 		    // to be set to the Look and Feel of the native system.
 			
-		    mainView = new DefaultFrm("Default d");
+		    if(mainView ==null)
+			mainView = new DefaultFrm("Default Display");
 		    try {
 		        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		    } 

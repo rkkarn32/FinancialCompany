@@ -36,13 +36,13 @@ public abstract class AbstractFrm extends JFrame{
 		
 		getContentPane().add(BorderLayout.CENTER, mainPanel);
 		model = getModel();
+		table = new JTable(model);
 		
 		mainPanel.add(scrollPane);
 		scrollPane.setBounds(12,92,444,160);
 		scrollPane.getViewport().add(table);
         table.setBounds(0, 0, 420, 0);
 		
-        
         
 		if(getButtons() != null && getButtons().size()!=0)
 		for (JButton button: getButtons())

@@ -8,5 +8,9 @@ public class Bronze extends CCard {
 		super.setMP(0.14);
 		
 	}
+	
+	public  void setAccountType(String accountType){
+		super.setAccountType(accountType);
+	}
 
 }

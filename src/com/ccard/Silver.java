@@ -7,6 +7,13 @@ public class Silver extends CCard{
 		
 		super.setMI(0.08);
 		super.setMP(0.12);
+	
 	}
+	
+	
+	public  void setAccountType(String accountType){
+		super.setAccountType(accountType);
+	}
+	
 
 }

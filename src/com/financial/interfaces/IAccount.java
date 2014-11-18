@@ -11,8 +11,8 @@ public interface IAccount {
 	public double getBalance();
 	public boolean withdraw(double amount);
 	public void addEntry(Entry entry);
-	public boolean sendEmail();
-	public boolean hasToSendMail();
+	public void sendEmail(Entry entry, String subject);
+	public String hasToSendMail(Entry entry);
 	public StringBuilder generateReport();
 	public String toString();
 	public void addInterest();

@@ -10,8 +10,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import sun.font.EAttribute;
-
 public abstract class AbstractFrm extends JFrame{
 	
 	/**
@@ -27,9 +25,10 @@ public abstract class AbstractFrm extends JFrame{
 	 */
 	public AbstractFrm(String title) {
 		super(title);
-		setBounds(10, 10, 300, 300);
-		setDefaultCloseOperation(javax.swing.JFrame.DO_NOTHING_ON_CLOSE);
+		//setDefaultCloseOperation(javax.swing.JFrame.DO_NOTHING_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0,0));
+		
+		mainPanel= new JPanel();
 		mainPanel.setLayout(null);
 		
 		setSize(575,310);		//Default Size for Main Window
@@ -39,10 +38,15 @@ public abstract class AbstractFrm extends JFrame{
 		model = getModel();
 		
 		mainPanel.add(scrollPane);
+		scrollPane.setBounds(12,92,444,160);
+		scrollPane.getViewport().add(table);
+        table.setBounds(0, 0, 420, 0);
 		
+        
+        
+		if(getButtons() != null && getButtons().size()!=0)
 		for (JButton button: getButtons())
 			mainPanel.add(button);
-		
 		
 	}
 		
@@ -57,8 +61,9 @@ public abstract class AbstractFrm extends JFrame{
 	public abstract List<JButton> getButtons();
 	public abstract DefaultTableModel getModel();
 	
-	private JPanel mainPanel= new JPanel();
+	private JPanel mainPanel;
 	private JScrollPane scrollPane = new JScrollPane();
 	private JTable table = new JTable();
+	
 	
 }

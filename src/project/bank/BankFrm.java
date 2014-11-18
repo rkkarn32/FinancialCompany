@@ -59,8 +59,9 @@ public class BankFrm extends javax.swing.JFrame
 //        rowdata = new Object[8];
 		
 		JButton_PerAC.setText("Add personal account");
-		JPanel1.add(JButton_PerAC);
 		JButton_PerAC.setBounds(24,20,192,33);
+		JPanel1.add(JButton_PerAC);
+		
 		JButton_CompAC.setText("Add company account");
 		JButton_CompAC.setActionCommand("jbutton");
 		JPanel1.add(JButton_CompAC);

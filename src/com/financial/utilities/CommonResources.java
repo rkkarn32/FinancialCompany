@@ -78,4 +78,8 @@ public class CommonResources {
 			return false;
 		}
 	}
+	
+	public static String splitString(String text){
+		return text.substring(0, 2);
+	}
 }

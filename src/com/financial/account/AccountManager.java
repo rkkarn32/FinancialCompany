@@ -8,7 +8,7 @@ import com.financial.interfaces.IAccount;
 
 public class AccountManager {
 
-	static AccountManager accountManager = new AccountManager();
+	public static AccountManager accountManager = new AccountManager();
 	private List<IAccount> accountList;
 
 	public AccountManager() {

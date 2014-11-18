@@ -9,7 +9,7 @@ import com.financial.interfaces.ITransactionManager;
 
 public class TransactionManager implements ITransactionManager{
 
-	static TransactionManager accountManager = new TransactionManager();
+	public static TransactionManager transactionManager = new TransactionManager();
 	
 	private List<ITransaction> transactionList;
 	private List<ITransaction> undoList;

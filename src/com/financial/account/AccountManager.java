@@ -29,4 +29,15 @@ public class AccountManager{
 			account.addInterest();
 		}
 	}
+	
+	public IAccount getAccountByAccountNumber(String accountNumber){
+		Iterator<IAccount> it = this.accountList.iterator();
+		while(it.hasNext()){
+			IAccount account = it.next();
+			if(account.getAccountNumber().equals(accountNumber)){
+				return account;
+			}
+		}
+		return null;
+	}
 }

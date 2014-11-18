@@ -1,6 +1,6 @@
 package com.ccard;
 
-public class Bronze extends CCard {
+public class Bronze extends CreditCardAccount {
 
 	public Bronze(double initialBalance) {
 		super(initialBalance);

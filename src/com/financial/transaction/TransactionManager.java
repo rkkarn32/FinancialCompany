@@ -9,6 +9,7 @@ import com.financial.interfaces.ITransactionManager;
 public class TransactionManager implements ITransactionManager{
 
 	private List<ITransaction> transactionList;
+	private List<ITransaction> undoList;
 	
 	public TransactionManager() {
 		this.transactionList = new ArrayList<ITransaction>();
@@ -16,6 +17,8 @@ public class TransactionManager implements ITransactionManager{
 	
 	@Override
 	public void performOperation(ITransaction transaction) {
+		transactionList.add(transaction);
+		transaction.transact();
 				
 	}
 
@@ -25,5 +28,12 @@ public class TransactionManager implements ITransactionManager{
 
 	public void setTransactionList(List<ITransaction> transactionList) {
 		this.transactionList = transactionList;
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+		
 	}
 }

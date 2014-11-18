@@ -18,14 +18,14 @@ public class Deposite implements ITransaction{
 
 	@Override
 	public void transact() {
-		// TODO Auto-generated method stub
 		account.deposite(amount);
+		
 		
 	}
 
 	@Override
 	public void undoTransact() {
-		// TODO Auto-generated method stub
+		account.withdraw(amount);
 		
 		
 		

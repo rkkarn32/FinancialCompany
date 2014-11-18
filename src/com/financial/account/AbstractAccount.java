@@ -17,7 +17,7 @@ public abstract class AbstractAccount implements IAccount {
 	private ICustomer accountHolder;
 	private String accountType;
 	private double interestRate;
-	
+
 	private static int counter = 1000;
 
 	public AbstractAccount(String accountNumber, double initialBalance) {
@@ -28,11 +28,11 @@ public abstract class AbstractAccount implements IAccount {
 
 	public boolean deposite(double amount) {
 		this.totalBalance += amount;
-		createEntry(amount, CommonResources.TRANSACTION_DEPOSIT);
+		createEntry(amount, CommonResources.TEXT_DEPOSIT);
 		return true;
 	}
-	
-	private void createEntry(double amount,String info){
+
+	private void createEntry(double amount, String info) {
 		Entry newEntry = new Entry(amount, new Date(), info);
 		addEntry(newEntry);
 	}
@@ -44,22 +44,18 @@ public abstract class AbstractAccount implements IAccount {
 	public boolean withdraw(double amount) {
 
 		this.totalBalance -= amount;
-		createEntry(amount, CommonResources.TRANSACTION_WITHDRAW);
+		createEntry(amount, CommonResources.TEXT_WITHDRAW);
 		return true;
 	}
 
 	public void addEntry(Entry entry) {
 		this.entryList.add(entry);
-		hasToSendMail();
+		hasToSendMail(entry);
 	}
 
-	public boolean sendEmail() {
-		if (hasToSendMail()) {
-			System.out.println("mail sent :: ");
-			return true;
-		}
-		System.out.println("Mail not sent :: ");
-		return false;
+	public void sendEmail(Entry entry, String subject) {
+		CommonResources.sendMail(this.accountHolder.getEmail(),
+				entry.toString(), subject);
 	}
 
 	public StringBuilder generateReport() {
@@ -82,21 +78,27 @@ public abstract class AbstractAccount implements IAccount {
 		return myBuilder;
 	}
 
-	public void addInterest(){
-		double intersetAmount = this.totalBalance * this.getInterestRate() / 100;
+	public void addInterest() {
+		double intersetAmount = this.totalBalance * this.getInterestRate()
+				/ 100;
 		this.totalBalance += intersetAmount;
-		createEntry(intersetAmount, CommonResources.TRANSACTION_INTERESTAMOUNT);
+		createEntry(intersetAmount, CommonResources.TEXT_INTERESTAMOUNT);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Account{" + "acctNumber=" + this.accountNumber + ", balance="
 				+ this.totalBalance + '}';
 	}
 
-	public boolean hasToSendMail() {
+	public String hasToSendMail(Entry entry) {
 
-		return hasToSendMail();
+		String message = hasToSendMail(entry);
+
+		if (message != null) {
+			sendEmail(entry, message);
+		}
+		return hasToSendMail(entry);
 	}
 
 	public String getAccountNumber() {
@@ -138,6 +140,7 @@ public abstract class AbstractAccount implements IAccount {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
+
 	public double getInterestRate() {
 		return interestRate;
 	}

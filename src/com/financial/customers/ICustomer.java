@@ -7,6 +7,7 @@ public interface ICustomer {
 	void addAccount(IAccount account);
 	void removeAccount(IAccount account);
 	void update();
+	public String getEmail();
 	String getType();
 	String toString();
 	

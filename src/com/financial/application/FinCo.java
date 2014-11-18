@@ -39,6 +39,8 @@ public class FinCo {
 		    	controller = new DefaultFrmController(new ArrayList<IAccount>(), new DefaultFrm("MyView"));
 		    	controller.updateView();
 		    }
+		    else
+		    	controller.updateView();
 		    
 			//Create a new instance of our application's frame, and make it visible.
 			//mainView.setVisible(true);

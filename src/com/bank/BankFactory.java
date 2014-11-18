@@ -13,6 +13,5 @@ public class BankFactory extends FinancialFactory{
 			return new SavingAccount(0D);
 		}
 		return null;
-		
 	}
 }

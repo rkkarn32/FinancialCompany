@@ -28,34 +28,12 @@ public class CommonResources {
 	public static String CUTOMERFACTORY = "Customer Factory";
 	
 	
-	
 	public static String TRANSACTION_DEPOSITE = "Deposite";
 	public static String TRANSACTION_wITHDRAW = "Withdraw";
 	public static String TRANSACTION_ADDINTEREST = "AddInterest";
 	
 	
 	public static String ACCOUNT = "Account";
-	
-	
-	public static enum FACTORY {
-		CUSTOMER_FACTORY, ACCOUNT_FACTORY, TRANSACTION_FACTORY
-	}
-	
-	
-	public static enum TRANSACTION{
-		DEPOSITE, WITHDRAW, ADDINTEREST
-	}
-	
-	public static enum CUSTOMER{
-		PERSON, COMPANY
-	}
-	
-	public enum ACCOUNT{
-		ACCOUNT
-	}
-	
-	
-	
 
 	public static boolean startUp = false;
 	public static Session session;

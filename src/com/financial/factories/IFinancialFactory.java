@@ -11,10 +11,10 @@ import com.financial.utilities.CommonResources.TRANSACTION;
 public interface IFinancialFactory {
 	
 
-	ICustomer createCustomer(String customerenum);
+	ICustomer createCustomer(String customerString);
 
-	IAccount createAccount(String accountenum);
+	IAccount createAccount(String accounteString);
 
-	ITransaction createTransaction(String transactionenum);
+	ITransaction createTransaction(String transactionString);
 
 }

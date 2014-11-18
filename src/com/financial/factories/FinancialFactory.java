@@ -1,12 +1,10 @@
 package com.financial.factories;
 
-import com.financial.account.Account;
+
 import com.financial.customers.ICustomer;
 import com.financial.interfaces.IAccount;
 import com.financial.interfaces.ITransaction;
-import com.financial.utilities.CommonResources.ACCOUNT;
-import com.financial.utilities.CommonResources.CUSTOMER;
-import com.financial.utilities.CommonResources.TRANSACTION;
+
 
 public class FinancialFactory implements IFinancialFactory{
 	
@@ -15,19 +13,19 @@ public class FinancialFactory implements IFinancialFactory{
 	}
 	
 	@Override
-	public ICustomer createCustomer(String customerenum){
-		return SimpleCustomerFactory.createCustomer(customerenum);
+	public ICustomer createCustomer(String customerString){
+		return SimpleCustomerFactory.createCustomer(customerString);
 	}
 	
 	@Override
-	public IAccount createAccount(String accountenum){
-		return SimpleAccountFactory.createAccount(accountenum);
+	public IAccount createAccount(String accountString){
+		return SimpleAccountFactory.createAccount(accountString);
 	}
 
 	@Override
-	public ITransaction createTransaction(String transactionenum) {
+	public ITransaction createTransaction(String transactionString) {
 		// TODO Auto-generated method stub
-		return SimpleTransactionFactory.createTransaction(transactionenum);
+		return SimpleTransactionFactory.createTransaction(transactionString);
 	}
 
 }

@@ -12,7 +12,7 @@ public class SimpleCustomerFactory {
 	public static ICustomer createCustomer(String customerenum){
 		
 		switch (customerenum) {
-		case PERSON:
+		case :
 			return new Company();
 		case COMPANY:
 			return new Person();

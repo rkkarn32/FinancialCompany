@@ -1,6 +1,7 @@
 package com.financial.interfaces;
 
 import java.util.List;
+import java.util.Vector;
 
 import com.financial.account.Entry;
 import com.financial.customers.ICustomer;
@@ -29,4 +30,6 @@ public interface IAccount {
 	public void setAccountType(String accountType);
 	public double getInterestRate();
 	public void setInterestRate(double interestRate);
+	
+	public Vector getVector();
 }

@@ -12,7 +12,7 @@ import com.financial.account.Entry;
 import com.financial.utilities.CommonResources;
 import com.sun.xml.internal.fastinfoset.CommonResourceBundle;
 
-public class CCard extends AbstractAccount {
+public abstract class CCard extends AbstractAccount {
 
 	// previous balance: balance from last month
 	// total charges: total of all charges for this month
@@ -30,6 +30,14 @@ public class CCard extends AbstractAccount {
 	private double newBalance;
 	private double totalDue;
 	private Date expDate;
+	private String accountType;
+	
+	public  void setAccountType(String accountType){
+		this.accountType = accountType;
+	}
+		
+	
+	
 	
 	private Vector returnVector;
 	

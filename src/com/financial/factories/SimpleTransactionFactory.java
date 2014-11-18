@@ -11,7 +11,7 @@ import com.financial.utilities.CommonResources.TRANSACTION;
 
 public class SimpleTransactionFactory {
 	
-	public static ITransaction createTransaction(TRANSACTION transactionenum){
+	public static ITransaction createTransaction(String transactionenum){
 		
 		switch (transactionenum) {
 		case DEPOSITE:

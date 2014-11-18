@@ -15,17 +15,17 @@ public class FinancialFactory implements IFinancialFactory{
 	}
 	
 	@Override
-	public ICustomer createCustomer(CUSTOMER customerenum){
+	public ICustomer createCustomer(String customerenum){
 		return SimpleCustomerFactory.createCustomer(customerenum);
 	}
 	
 	@Override
-	public IAccount createAccount(ACCOUNT accountenum){
+	public IAccount createAccount(String accountenum){
 		return SimpleAccountFactory.createAccount(accountenum);
 	}
 
 	@Override
-	public ITransaction createTransaction(TRANSACTION transactionenum) {
+	public ITransaction createTransaction(String transactionenum) {
 		// TODO Auto-generated method stub
 		return SimpleTransactionFactory.createTransaction(transactionenum);
 	}

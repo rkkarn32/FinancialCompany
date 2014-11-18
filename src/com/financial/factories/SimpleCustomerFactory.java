@@ -9,7 +9,7 @@ import com.financial.utilities.CommonResources.CUSTOMER;
 
 
 public class SimpleCustomerFactory {
-	public static ICustomer createCustomer(CUSTOMER customerenum){
+	public static ICustomer createCustomer(String customerenum){
 		
 		switch (customerenum) {
 		case PERSON:

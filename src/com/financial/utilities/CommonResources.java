@@ -14,8 +14,8 @@ public class CommonResources {
 
 	
 
-	public static enum Utility {
-		CUSTOMER, ACCOUNT, TRANSACTION
+	public static enum FACTORY {
+		CUSTOMER_FACTORY, ACCOUNT_FACTORY, TRANSACTION_FACTORY
 	}
 	
 	

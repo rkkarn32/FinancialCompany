@@ -1,40 +1,47 @@
 package com.financial.application;
 
+import java.util.ArrayList;
+
 import javax.swing.UIManager;
 
-import project.bank.BankFrm;
-
+import com.financial.controller.AbstractFrmController;
+import com.financial.controller.DefaultFrmController;
+import com.financial.controller.IFrmController;
+import com.financial.factories.IFinancialFactory;
+import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
 import com.financial.view.DefaultFrm;
 
 public class FinCo {
 	
 	private static AbstractFrm mainView ;
+	private static IFrmController controller;
+	private static IFinancialFactory factory;
 	
-	public void setMainView(AbstractFrm mainView) {
-		this.mainView = mainView;
-	}
 	
 	
 	/*
 	 * Main Application for Factory
 	 */
+	
 	public static void main(String[] args) {
 		
 		try {
 		    // Add the following code if you want the Look and Feel
 		    // to be set to the Look and Feel of the native system.
 			
-		    if(mainView ==null)
-			mainView = new DefaultFrm("Default Display");
 		    try {
 		        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		    } 
 		    catch (Exception e) { 
 		    }
+		    if(controller== null){
+		    	controller = new DefaultFrmController(new ArrayList<IAccount>(), new DefaultFrm("MyView"));
+		    	controller.updateView();
+		    }
 		    
 			//Create a new instance of our application's frame, and make it visible.
-			mainView.setVisible(true);
+			//mainView.setVisible(true);
 		} 
 		catch (Throwable t) {
 			t.printStackTrace();
@@ -42,4 +49,26 @@ public class FinCo {
 			System.exit(1);
 		}
 	}
+	public static IFinancialFactory getFactory() {
+		return factory;
+	}
+	public static void setFactory(IFinancialFactory factory) {
+		FinCo.factory = factory;
+	}
+	public static AbstractFrm getMainView() {
+		return mainView;
+	}
+	public void setMainView(AbstractFrm mainView) {
+		this.mainView = mainView;
+	}
+	public static IFrmController getController() {
+		return controller;
+	}
+	public void setController(IFrmController controller){
+		this.controller = controller;
+	}
+	
+	
+	
+	
 }

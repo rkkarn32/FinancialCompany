@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.financial.customers.ICustomer;
 import com.financial.interfaces.IAccount;
+import com.financial.utilities.CommonResources;
 
 public abstract class AbstractAccount implements IAccount {
 
@@ -15,6 +16,8 @@ public abstract class AbstractAccount implements IAccount {
 	private double totalBalance;
 	private ICustomer accountHolder;
 	private String accountType;
+	private double interestRate;
+	
 	private static int counter = 1000;
 
 	public AbstractAccount(String accountNumber, double initialBalance) {
@@ -25,9 +28,13 @@ public abstract class AbstractAccount implements IAccount {
 
 	public boolean deposite(double amount) {
 		this.totalBalance += amount;
-		Entry newEntry = new Entry(amount, new Date(), "Deposit");
-		addEntry(newEntry);
+		createEntry(amount, CommonResources.TRANSACTION_DEPOSIT);
 		return true;
+	}
+	
+	private void createEntry(double amount,String info){
+		Entry newEntry = new Entry(amount, new Date(), info);
+		addEntry(newEntry);
 	}
 
 	public double getBalance() {
@@ -37,8 +44,7 @@ public abstract class AbstractAccount implements IAccount {
 	public boolean withdraw(double amount) {
 
 		this.totalBalance -= amount;
-		Entry newEntry = new Entry(amount, new Date(), "Withdraw");
-		addEntry(newEntry);
+		createEntry(amount, CommonResources.TRANSACTION_WITHDRAW);
 		return true;
 	}
 
@@ -76,6 +82,12 @@ public abstract class AbstractAccount implements IAccount {
 		return myBuilder;
 	}
 
+	public void addInterest(){
+		double intersetAmount = this.totalBalance * this.getInterestRate() / 100;
+		this.totalBalance += intersetAmount;
+		createEntry(intersetAmount, CommonResources.TRANSACTION_INTERESTAMOUNT);
+	}
+	
 	@Override
 	public String toString() {
 		return "Account{" + "acctNumber=" + this.accountNumber + ", balance="
@@ -125,5 +137,12 @@ public abstract class AbstractAccount implements IAccount {
 
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
+	}
+	public double getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
 	}
 }

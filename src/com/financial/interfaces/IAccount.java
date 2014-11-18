@@ -15,7 +15,8 @@ public interface IAccount {
 	public boolean hasToSendMail();
 	public StringBuilder generateReport();
 	public String toString();
-	
+	public void addInterest();
+		
 	public String getAccountNumber();
 	public void setAccountNumber(String accountNumber);
 	public List<Entry> getEntryList();
@@ -26,4 +27,6 @@ public interface IAccount {
 	public ICustomer getAccountHolder();
 	public String getAccountType();
 	public void setAccountType(String accountType);
+	public double getInterestRate();
+	public void setInterestRate(double interestRate);
 }

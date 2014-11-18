@@ -1,11 +1,12 @@
 package com.financial.account;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.financial.interfaces.IAccount;
 
-public class AccountManager {
+public class AccountManager{
 
 	private List<IAccount> accountList = new ArrayList<IAccount>();
 	
@@ -19,5 +20,13 @@ public class AccountManager {
 	
 	public List<IAccount> getAccountList(){
 		return this.accountList;
+	}
+	
+	public void addInterest(){
+		Iterator<IAccount> it = this.accountList.iterator();
+		while(it.hasNext()){
+			IAccount account = it.next();
+			account.addInterest();
+		}
 	}
 }

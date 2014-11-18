@@ -3,13 +3,17 @@ package com.financial.transaction;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.financial.account.AccountManager;
 import com.financial.interfaces.ITransaction;
 import com.financial.interfaces.ITransactionManager;
 
 public class TransactionManager implements ITransactionManager{
 
+	static TransactionManager accountManager = new TransactionManager();
+	
 	private List<ITransaction> transactionList;
 	private List<ITransaction> undoList;
+	private List<ITransaction> redoList;
 	
 	public TransactionManager() {
 		this.transactionList = new ArrayList<ITransaction>();

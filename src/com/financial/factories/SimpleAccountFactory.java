@@ -7,9 +7,9 @@ import com.financial.utilities.CommonResources;
 
 public class SimpleAccountFactory {
 	
-	public static IAccount createAccount(String accountenum){
+	public static IAccount createAccount(String accountString){
 		
-		if(accountenum.equals(CommonResources.ACCOUNT))
+		if(accountString.equals(CommonResources.ACCOUNT))
 			return new Account(1245);
 		return null;
 		

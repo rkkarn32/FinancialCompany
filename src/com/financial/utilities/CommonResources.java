@@ -18,19 +18,14 @@ public class CommonResources {
 	public static String ACCOUNT_DEFAULT_TYPE         = "DEFAULT";
 	public static double ACCOUNT_DEFAULT_INTERESTRATE = 10.1;
 	
-	public static String TEXT_DEPOSIT = "Deposit";
+	public static String TEXT_DEPOSIT = "Deposite";
 	public static String TEXT_WITHDRAW = "Withdraw";
-	public static String TEXT_INTERESTAMOUNT = "Interest added";
+	public static String TEXT_INTERESTAMOUNT = "AddInterest";
 	
 	
 	public static String ACCOUNTFACTORY = "Account Factory";
 	public static String TRANSACTIONFACTORY = "Transaction Factory";
 	public static String CUTOMERFACTORY = "Customer Factory";
-	
-	
-	public static String TRANSACTION_DEPOSITE = "Deposite";
-	public static String TRANSACTION_wITHDRAW = "Withdraw";
-	public static String TRANSACTION_ADDINTEREST = "AddInterest";
 	
 	
 	public static String ACCOUNT = "Account";

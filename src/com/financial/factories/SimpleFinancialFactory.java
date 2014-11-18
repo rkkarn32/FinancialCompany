@@ -5,6 +5,8 @@ import com.financial.utilities.CommonResources;
 public class SimpleFinancialFactory {
 	
 	public IFinancialFactory createFinancialFactory(String choice ){
+		
+		
 	//		switch (choice) {
 	//        case CUSTOMER_FACTORY:
 	//            return new SimpleCustomerFactory();

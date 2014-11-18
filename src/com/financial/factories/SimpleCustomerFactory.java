@@ -8,10 +8,11 @@ import com.financial.transaction.Withdraw;
 import com.financial.utilities.CommonResources;
 
 public class SimpleCustomerFactory {
-	public static ICustomer createCustomer(String customerenum){	
-		if(customerenum.equals(CommonResources.CUSTORMER_COMPANY)){
+	
+	public static ICustomer createCustomer(String customerString){	
+		if(customerString.equals(CommonResources.CUSTORMER_COMPANY)){
 			return new Company();
-		}else if(customerenum.equals(CommonResources.CUSTORMER_PERSON)){
+		}else if(customerString.equals(CommonResources.CUSTORMER_PERSON)){
 			return new Person();
 		}
 		return null;

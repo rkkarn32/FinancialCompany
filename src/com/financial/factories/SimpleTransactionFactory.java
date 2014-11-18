@@ -9,11 +9,11 @@ import com.financial.utilities.CommonResources;
 
 public class SimpleTransactionFactory {
 	
-	public static ITransaction createTransaction(String transactionenum){
+	public static ITransaction createTransaction(String transactionString){
 				
-		if(transactionenum.equals(CommonResources.TEXT_DEPOSIT)){
+		if(transactionString.equals(CommonResources.TEXT_DEPOSIT)){
 			return new Deposite(null, 0.0);
-		}else if(transactionenum.equals(CommonResources.TEXT_WITHDRAW)){
+		}else if(transactionString.equals(CommonResources.TEXT_WITHDRAW)){
 			return new Withdraw(null, 0.0);
 		}
 		return null;

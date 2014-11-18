@@ -35,9 +35,10 @@ public class TransactionManager implements ITransactionManager{
 	}
 
 	@Override
-	public void undo() {
+	public void undo(ITransaction transaction) {
 		// TODO Auto-generated method stub
-		
+		transaction.undoTransact();
+		undoList.add(transaction);
 		
 	}
 }

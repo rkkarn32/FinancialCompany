@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Vector;
 
 import com.financial.account.AbstractAccount;
@@ -66,7 +67,9 @@ public abstract class CreditCardAccount extends AbstractAccount {
 
 	}
 
-	public void generateMonthlyBills() {
+	public StringBuilder generateMonthlyBills() {
+		
+		
 	
 		Calendar aCalendar = Calendar.getInstance();
 		// add -1 month to current month
@@ -105,12 +108,25 @@ public abstract class CreditCardAccount extends AbstractAccount {
 		
 		totalDue = MP * newBalance;
 		
+		StringBuilder monthlybillBuilder = new StringBuilder();
+		
 		System.out.println("Current Balance is " + newBalance);
 		System.out.println("Previous Balance for this month is "
 				+ previousBalance);
 		System.out.println("Total Charges for this month " + totalCharges);
 		System.out.println("Total Payment for this month " + totalCredits);
 		System.out.println("Total Due remaining " + totalDue);
+		
+		monthlybillBuilder.append("Current Balance is " + newBalance);
+		monthlybillBuilder.append("Previous Balance for this month is "
+				+ previousBalance);
+		monthlybillBuilder.append("Total Charges for this month " + totalCharges);
+		monthlybillBuilder.append("Total Payment for this month " + totalCredits);
+		monthlybillBuilder.append("Total Due remaining " + totalDue);
+		
+		
+		
+		return monthlybillBuilder;
 
 	}
 

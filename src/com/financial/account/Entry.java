@@ -36,5 +36,10 @@ public class Entry {
 	public void setEntryInfo(String entryInfo) {
 		this.entryInfo = entryInfo;
 	}
+	
+	public String toString(){
+		return "Entry {" + "Amount = " + this.amount + ", EntryDate = "
+				+ this.entryDate.toString() + "Type " + this.entryInfo + '}';
+	}
 
 }

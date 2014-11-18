@@ -13,6 +13,8 @@ public interface IAccount {
 	public void addEntry(Entry entry);
 	public boolean sendEmail();
 	public boolean hasToSendMail();
+	public StringBuilder generateReport();
+	public String toString();
 	
 	public String getAccountNumber();
 	public void setAccountNumber(String accountNumber);

@@ -5,13 +5,15 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
+import com.financial.account.AccountManager;
+import com.financial.customers.ICustomer;
+import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
+import com.financial.utilities.CommonResources;
 import com.financial.view.AbstractFrm;
 import com.financial.view.DefaultFrm;
 import com.financial.view.Dialog_AddAccount;
-import com.sun.xml.internal.ws.api.server.Container;
 
 public class DefaultFrmController extends AbstractFrmController{
 	
@@ -45,7 +47,7 @@ public class DefaultFrmController extends AbstractFrmController{
 	public class ButtonListener implements ActionListener{
 
 		@Override
-		public void c(ActionEvent e) {
+		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == myView.getButtonAddAccount())
 					buttonAddAccount_ActionPerformed(e);
 			else if(e.getSource() == myView.getButtonAddInterest())
@@ -59,10 +61,18 @@ public class DefaultFrmController extends AbstractFrmController{
 		}
 	}
 	
-	public void buttonAddAccount_ActionPerformed(ActionEvent event){
-		Dialog_AddAccount addAccount = new Dialog_AddAccount("Default Account",this.myView); 
-		addAccount.setVisible(true);
+	public void buttonAddAccount_ActionPerformed(ActionEvent event){ 
 		
+		ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
+		IAccount account = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
+
+		//customer.addAccount(account);
+		Dialog_AddAccount dialogAdd = new Dialog_AddAccount("MyDialog", myView, account);
+		dialogAdd.setVisible(true);
+		AccountManager aManager = SingletonFactory.getAccountManager();
+		aManager.addAccount(account);
+		model.addRow(account.getVector());
+		updateView();
 		System.out.println("Account should be added");
 	}
 	private void buttonAddInterest_ActionPerformed(ActionEvent event){

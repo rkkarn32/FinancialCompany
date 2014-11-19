@@ -1,22 +1,19 @@
 package com.financial.controller;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
-import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
+import com.financial.factories.IFinancialFactory;
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
-import com.financial.view.DefaultFrm;
 
 public abstract class AbstractFrmController implements IFrmController {
 	
 	protected DefaultTableModel model;
 	protected AbstractFrm view;
 	protected  List<IAccount> accountList;
-	
+	protected IFinancialFactory financialFactory;
 	public AbstractFrmController(List<IAccount> accountList, AbstractFrm view) {
 		super();
 		this.accountList = accountList;
@@ -51,6 +48,8 @@ public abstract class AbstractFrmController implements IFrmController {
 		return this.accountList;
 	}
 
-	
+	public void setFinancialFactory(IFinancialFactory factory){
+		this.financialFactory= factory;
+	}
 
 }

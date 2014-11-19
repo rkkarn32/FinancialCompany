@@ -7,6 +7,7 @@ import javax.swing.UIManager;
 import com.financial.controller.AbstractFrmController;
 import com.financial.controller.DefaultFrmController;
 import com.financial.controller.IFrmController;
+import com.financial.factories.FinancialFactory;
 import com.financial.factories.IFinancialFactory;
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
@@ -16,7 +17,7 @@ public class FinCo {
 	
 	private static AbstractFrm mainView ;
 	private static IFrmController controller;
-	private static IFinancialFactory factory;
+	//private static IFinancialFactory factory;
 	
 	
 	
@@ -37,6 +38,8 @@ public class FinCo {
 		    }
 		    if(controller== null){
 		    	controller = new DefaultFrmController(new ArrayList<IAccount>(), new DefaultFrm("MyView"));
+		    	IFinancialFactory factory = new FinancialFactory();
+		    	controller.setFinancialFactory(factory);
 		    	controller.updateView();
 		    }
 		    else
@@ -50,12 +53,6 @@ public class FinCo {
 			//Ensure the application exits with an error condition.
 			System.exit(1);
 		}
-	}
-	public static IFinancialFactory getFactory() {
-		return factory;
-	}
-	public static void setFactory(IFinancialFactory factory) {
-		FinCo.factory = factory;
 	}
 	public static AbstractFrm getMainView() {
 		return mainView;

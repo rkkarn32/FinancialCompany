@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
 
+import com.financial.account.AccountManager;
 import com.financial.factories.IFinancialFactory;
+import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
 
@@ -32,6 +34,11 @@ public abstract class AbstractFrmController implements IFrmController {
 
 	@Override
 	public void updateView() {
+		model = new DefaultTableModel();
+		AccountManager accountManager = SingletonFactory.getAccountManager();
+		List<IAccount> accountList = accountManager.getDaoAccount().getAll();
+		for(IAccount acc:accountList)
+			model.addRow(acc.getVector());
 		view.updateView(model);
 		if(!view.isVisible())
 			view.setVisible(true);

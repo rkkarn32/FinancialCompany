@@ -72,9 +72,10 @@ public class BankFrmController extends DefaultFrmController {
 		IAccount account = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
 
 		//customer.addAccount(account);
-		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add("MyDialog", myBankView, account);
+		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add("MyDialog", myBankView, financialFactory);
 		
 		dialogAdd.setVisible(true);
+		
 		AccountManager aManager = SingletonFactory.getAccountManager();
 		aManager.addAccount(account);
 		model.addRow(account.getVector());

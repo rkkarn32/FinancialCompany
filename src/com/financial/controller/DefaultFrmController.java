@@ -65,13 +65,14 @@ public class DefaultFrmController extends AbstractFrmController{
 	
 	public void buttonAddAccount_ActionPerformed(ActionEvent event){ 
 		
-		ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
-		IAccount account = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
+		//ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
+		IAccount account;// = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
 
 		//customer.addAccount(account);
-		Dialog_AddAccount dialogAdd = new Dialog_AddAccount("MyDialog", myView, account);
+		Dialog_AddAccount dialogAdd = new Dialog_AddAccount("MyDialog", myView,  financialFactory);
 		dialogAdd.setVisible(true);
 		AccountManager aManager = SingletonFactory.getAccountManager();
+		account = dialogAdd.getAccount();
 		aManager.addAccount(account);
 		model.addRow(account.getVector());
 		updateView();
@@ -85,6 +86,9 @@ public class DefaultFrmController extends AbstractFrmController{
 	}
 	public void buttonWithdraw_ActionPerformed(ActionEvent event){
 		System.out.println("Withdraw is clicked");
+	}
+	public void buttonGenerateReport_ActionPerformed(ActionEvent event){
+		System.out.println("Report:");
 	}
 	public void buttonExit_ActionPerformed(ActionEvent event){
 		System.exit(1);

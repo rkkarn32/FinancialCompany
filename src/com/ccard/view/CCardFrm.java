@@ -10,7 +10,7 @@ import com.financial.view.DefaultFrm;
 public class CCardFrm extends DefaultFrm{
 	
 	private JButton buttonGenerateBill;// = new JButton();
-	private List <JButton> buttonList;
+	private List<JButton> buttonList;
 	
 
 	public CCardFrm(String title) {

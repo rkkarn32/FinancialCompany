@@ -12,7 +12,8 @@ public abstract class Customer implements ICustomer {
 	private String type;
 	private IAddress address;
 	
-	
+	//Default Customer
+	public Customer() {	}
 	
 	public Customer(String name, String email,
 			String type, IAddress address) {

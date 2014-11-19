@@ -21,6 +21,8 @@ public class BankFrmController extends DefaultFrmController {
 		super(accountList, view);
 		this.myBankView = view;
 	}
+	
+	
 
 	@Override
 	public void setView(AbstractFrm view) {
@@ -56,6 +58,11 @@ public class BankFrmController extends DefaultFrmController {
 			else if (e.getSource() == myBankView.getButtonCompanyAccount())
 				buttonNewButton_ActionPerformed(e);
 		}
+	}
+	
+	@Override
+	public void buttonAddAccount_ActionPerformed(ActionEvent event){
+		System.out.println("This is not working");
 	}
 
 	private void buttonNewButton_ActionPerformed(ActionEvent event) {

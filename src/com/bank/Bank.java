@@ -70,8 +70,10 @@ public class Bank {
 		    } 
 		    catch (Exception e) { 
 		    }
+		    BankFactory bankFactory= new BankFactory();
 		    BankFrm bankFrame                = new BankFrm("Bank View");
 			BankFrmController bankController = new BankFrmController(accountManager.getDaoAccount().getAll(), bankFrame);
+			bankController.setFinancialFactory(bankFactory);
 			FinCo.setController(bankController);
 			FinCo.main(null);
 		}catch(Exception e){

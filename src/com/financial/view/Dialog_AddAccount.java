@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import com.financial.account.Account;
 import com.financial.customers.Address;
+import com.financial.customers.Person;
 import com.financial.interfaces.IAccount;
 
 public class Dialog_AddAccount extends JDialog {
@@ -141,6 +142,8 @@ public class Dialog_AddAccount extends JDialog {
 		// parentframe.accountType="S";
 		// parentframe.newaccount=true;
 		
+		Person person = new Person();
+		account.setAccountHolder(person);
 		account.getAccountHolder().setName(txtName.getText());
 		Address address = new Address(txtStreet.getText(), txtCity.getText(), txtCity.getText(), Integer.parseInt(txtZip.getText()));
 		account.getAccountHolder().setAddress(address);

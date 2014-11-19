@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 import com.bank.view.BankFrm;
+import com.bank.view.Bank_Dlg_Add_Company;
 import com.bank.view.Bank_Dlg_Add_Personal;
 import com.financial.account.AccountManager;
 import com.financial.controller.DefaultFrmController;
@@ -60,7 +61,7 @@ public class BankFrmController extends DefaultFrmController {
 			else if (e.getSource() == myBankView.getButtonExit())
 				buttonExit_ActionPerformed(e);
 			else if (e.getSource() == myBankView.getButtonCompanyAccount())
-				buttonNewButton_ActionPerformed(e);
+				buttonCompAcc_ActionPerformed(e);
 		}
 	}
 
@@ -88,7 +89,22 @@ public class BankFrmController extends DefaultFrmController {
 		System.out.println("Account should be added");
 	}
 
-	private void buttonNewButton_ActionPerformed(ActionEvent event) {
+	private void buttonCompAcc_ActionPerformed(ActionEvent event) {
+		
+		IAccount account;
+		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add_Company("MyDialog", myBankView,
+				financialFactory);
+		dialogAdd.setTitle("Add Company Account");
+		dialogAdd.setVisible(true);
+		account = dialogAdd.getAccount();
+		if (account != null) {
+			AccountManager aManager = SingletonFactory.getAccountManager();
+			aManager.addAccount(account);
+			model.addRow(account.getVector());
+			updateView();
+		}
+		else
+			System.out.println("Action Canceld");
 		System.out.println("Add Company Account Added is clicked");
 	}
 }

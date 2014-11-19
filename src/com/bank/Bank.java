@@ -1,16 +1,22 @@
 package com.bank;
 
+import java.util.ArrayList;
 import java.util.Date;
+
+import javax.swing.UIManager;
 
 import com.bank.controller.BankFrmController;
 import com.bank.view.BankFrm;
 import com.financial.account.AccountManager;
 import com.financial.account.CalculateInterestFunctor;
 import com.financial.application.FinCo;
+import com.financial.controller.DefaultFrmController;
 import com.financial.customers.Address;
 import com.financial.customers.IAddress;
 import com.financial.customers.ICustomer;
 import com.financial.customers.Person;
+import com.financial.factories.FinancialFactory;
+import com.financial.factories.IFinancialFactory;
 import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
 import com.financial.interfaces.ITransaction;
@@ -19,6 +25,7 @@ import com.financial.transaction.Deposite;
 import com.financial.transaction.TransactionManager;
 import com.financial.transaction.Withdraw;
 import com.financial.utilities.CommonResources;
+import com.financial.view.DefaultFrm;
 
 public class Bank {
 
@@ -54,12 +61,26 @@ public class Bank {
 		System.out.println(savingAccount.generateReport());
 		
 		
-		
+		try {
+		    // Add the following code if you want the Look and Feel
+		    // to be set to the Look and Feel of the native system.
+			
+		    try {
+		        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		    } 
+		    catch (Exception e) { 
+		    }
+		    BankFrm bankFrame                = new BankFrm("Bank View");
+			BankFrmController bankController = new BankFrmController(accountManager.getDaoAccount().getAll(), bankFrame);
+			FinCo.setController(bankController);
+			FinCo.main(null);
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+			//Create a new instance of our application's frame, and make it visible.
+			//mainView.setVisible(true);
 		
 		//new implementation for bank
-		BankFrm bankFrame                = new BankFrm("Bank View");
-		BankFrmController bankController = new BankFrmController(accountManager.getDaoAccount().getAll(), bankFrame);
-		FinCo.setController(bankController);
-		FinCo.main(null);
+		
 	}
 }

@@ -64,7 +64,7 @@ public class FinCo {
 		return controller;
 	}
 	public static void setController(IFrmController controller){
-		controller = controller;
+		FinCo.controller = controller;
 	}
 	
 	

@@ -34,7 +34,8 @@ public abstract class AbstractFrmController implements IFrmController {
 
 	@Override
 	public void updateView() {
-		model = new DefaultTableModel();
+		//model = new DefaultTableModel();
+		model = view.getModel();
 		AccountManager accountManager = SingletonFactory.getAccountManager();
 		List<IAccount> accountList = accountManager.getDaoAccount().getAll();
 		for(IAccount acc:accountList)

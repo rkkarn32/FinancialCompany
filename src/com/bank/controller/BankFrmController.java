@@ -27,8 +27,6 @@ public class BankFrmController extends DefaultFrmController {
 		super(accountList, view);
 		this.myBankView = view;
 	}
-	
-	
 
 	@Override
 	public void setView(AbstractFrm view) {
@@ -65,21 +63,28 @@ public class BankFrmController extends DefaultFrmController {
 				buttonNewButton_ActionPerformed(e);
 		}
 	}
-	
-	@Override
-	public void buttonAddAccount_ActionPerformed(ActionEvent event){
-		//ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
-		IAccount account = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
 
-		//customer.addAccount(account);
-		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add("MyDialog", myBankView, financialFactory);
-		
+	@Override
+	public void buttonAddAccount_ActionPerformed(ActionEvent event) {
+		// ICustomer customer =
+		// financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
+		IAccount account;// =
+							// financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
+
+		// customer.addAccount(account);
+		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add("MyDialog", myBankView,
+				financialFactory);
+
 		dialogAdd.setVisible(true);
-		
-		AccountManager aManager = SingletonFactory.getAccountManager();
-		aManager.addAccount(account);
-		model.addRow(account.getVector());
-		updateView();
+		account = dialogAdd.getAccount();
+		if (account != null) {
+			AccountManager aManager = SingletonFactory.getAccountManager();
+			aManager.addAccount(account);
+			model.addRow(account.getVector());
+			updateView();
+		}
+		else
+			System.out.println("Action Canceld");
 		System.out.println("Account should be added");
 	}
 

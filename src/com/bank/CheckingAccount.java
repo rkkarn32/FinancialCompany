@@ -8,16 +8,10 @@ import com.financial.utilities.CommonResources;
 
 public class CheckingAccount extends Account {
 
-	public CheckingAccount(double initialBalance) {
-		super(initialBalance);
+	public CheckingAccount(double initialBalance, String accountType) {
+		super(initialBalance, accountType);
 		setInterestRate(5.1);
 	}
-
-	@Override
-	public void setAccountType(String accountType) {
-		setAccountType(Utils.ACCOUNT_TYPE_CHECKING);
-	}
-
 	@Override
 	public void setInterestRate(double interestRate) {
 		super.setInterestRate(interestRate);

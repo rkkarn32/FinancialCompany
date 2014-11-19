@@ -22,8 +22,8 @@ public abstract class AbstractAccount implements IAccount {
 
 	private static int counter = 1000;
 
-	public AbstractAccount(double initialBalance) {
-		this.setAccountType(null);
+	public AbstractAccount(double initialBalance, String accountType) {
+		this.accountType   = accountType;
 		this.accountNumber = counter + CommonResources.splitString(this.accountType);
 		this.totalBalance = initialBalance;
 		this.entryList = new ArrayList<Entry>();

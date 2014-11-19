@@ -7,10 +7,10 @@ import com.financial.utilities.CommonResources;
 
 public class SimpleAccountFactory {
 	
-	public static IAccount createAccount(String accountString){
+public static IAccount createAccount(String accountString){
 		
 		if(accountString.equals(CommonResources.ACCOUNT_TYPE_DEFAULT))
-			return new Account(0);
+			return new Account(0D, CommonResources.ACCOUNT_TYPE_DEFAULT);
 		return null;
 		
 	}

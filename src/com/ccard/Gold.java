@@ -5,14 +5,10 @@ import com.financial.account.Entry;
 public class Gold extends CreditCardAccount {
 	
 	
-	public Gold(double initialBalance) {
-		super(initialBalance);
+	public Gold(double initialBalance, String accountType) {
+		super(initialBalance, accountType);
 		super.setMI(0.06);
 		super.setMP(0.10);
-	}
-
-	public  void setAccountType(String accountType){
-		super.setAccountType(accountType);
 	}
 
 	@Override

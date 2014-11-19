@@ -62,8 +62,8 @@ public abstract class CreditCardAccount extends AbstractAccount {
 	}
 	
 
-	public CreditCardAccount(double initialBalance) {
-		super(initialBalance);
+	public CreditCardAccount(double initialBalance, String creditCardType) {
+		super(initialBalance, creditCardType);
 
 	}
 

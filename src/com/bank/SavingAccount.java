@@ -7,14 +7,9 @@ import com.financial.customers.Person;
 import com.financial.utilities.CommonResources;
 
 public class SavingAccount extends Account{
-	public SavingAccount(double initialBalance) {
-		super(initialBalance);
+	public SavingAccount(double initialBalance, String accountType) {
+		super(initialBalance, accountType);
 		setInterestRate(7.1);
-	}
-
-	@Override
-	public void setAccountType(String accountType) {
-		super.setAccountType(Utils.ACCOUNT_TYPE_SAVING);
 	}
 
 	@Override
@@ -33,7 +28,6 @@ public class SavingAccount extends Account{
 			} 
 			if (entry.getEntryInfo().equals(CommonResources.TEXT_WITHDRAW)
 					&& entry.getAmount() > 500) {
-				System.out.println("withdraw greater than 500");
 				super.sendEmail(entry, "Withdraw is larger than $500");
 				return "Withdraw is larger than $500";
 			}

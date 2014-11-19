@@ -3,6 +3,7 @@ package com.ccard;
 import java.util.Date;
 
 import com.bank.SavingAccount;
+import com.bank.Utils;
 import com.financial.account.AccountManager;
 import com.financial.application.FinCo;
 import com.financial.customers.Address;
@@ -33,7 +34,7 @@ public class CCard {
 		personalCustomer.setEmail("koirala.rachana@gmail.com");
 		personalCustomer.setType(CommonResources.CUSTORMER_PERSON);
 
-		IAccount savingAccount = new SavingAccount(100);
+		IAccount savingAccount = new SavingAccount(100, Utils.ACCOUNT_TYPE_SAVING);
 		savingAccount.setAccountHolder(personalCustomer);
 
 		AccountManager accountManager = new AccountManager();

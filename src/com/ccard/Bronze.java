@@ -4,8 +4,8 @@ import com.financial.account.Entry;
 
 public class Bronze extends CreditCardAccount {
 
-	public Bronze(double initialBalance) {
-		super(initialBalance);
+	public Bronze(double initialBalance, String accounType) {
+		super(initialBalance, accounType);
 		super.setMI(0.10);
 		super.setMP(0.14);
 		

@@ -20,7 +20,7 @@ import com.financial.utilities.CommonResources;
 public class Bank {
 
 	public static void main(String args[]) {
-		System.out.println("bank main :: ");
+		
 		FinCo.main(null);
 
 		ICustomer personalCustomer = new Person();
@@ -32,7 +32,7 @@ public class Bank {
 		personalCustomer.setEmail("koirala.rachana@gmail.com");
 		personalCustomer.setType(CommonResources.CUSTORMER_PERSON);
 
-		IAccount savingAccount = new SavingAccount(100);
+		IAccount savingAccount = new SavingAccount(100, Utils.ACCOUNT_TYPE_SAVING);
 		savingAccount.setAccountHolder(personalCustomer);
 
 		AccountManager accountManager = new AccountManager();
@@ -43,13 +43,13 @@ public class Bank {
 		ITransaction deposit = new Deposite(savingAccount, 1000);
 		transactionManager.performOperation(deposit);
 		
-		ITransaction withdraw = new Withdraw(savingAccount, 510);
+		ITransaction withdraw = new Withdraw(savingAccount, 450);
 		transactionManager.performOperation(withdraw);
 		
 		//System.out.println(savingAccount.generateReport());
 		
-		//accountManager.addInterest(new CalculateInterestFunctor());
+		accountManager.addInterest(new CalculateInterestFunctor());
 		
-		//System.out.println(savingAccount.generateReport());
+		System.out.println(savingAccount.generateReport());
 	}
 }

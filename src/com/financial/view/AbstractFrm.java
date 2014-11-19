@@ -73,6 +73,16 @@ public abstract class AbstractFrm extends JFrame{
 	private JPanel mainPanel;
 	private JScrollPane scrollPane = new JScrollPane();
 	private JTable table = new JTable();
+
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+	
+	
 	
 	
 }

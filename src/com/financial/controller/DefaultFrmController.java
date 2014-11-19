@@ -15,10 +15,13 @@ import com.financial.account.Functor;
 import com.financial.customers.ICustomer;
 import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
+import com.financial.interfaces.ITransaction;
+import com.financial.transaction.Deposite;
 import com.financial.utilities.CommonResources;
 import com.financial.view.AbstractFrm;
 import com.financial.view.DefaultFrm;
 import com.financial.view.Dialog_AddAccount;
+import com.financial.view.Dialog_Deposit;
 
 public class DefaultFrmController extends AbstractFrmController{
 	
@@ -90,10 +93,42 @@ public class DefaultFrmController extends AbstractFrmController{
 		System.out.println("Add interest is clicked");
 	}
 	public void buttonDeposite_ActionPerfomed(ActionEvent event){
+		ITransaction deposite = financialFactory.createTransaction(CommonResources.TEXT_DEPOSIT);
+		Dialog_Deposit dlgDeposite = new Dialog_Deposit(myView, null);
+		 int selection = myView.getTable().getSelectionModel().getMinSelectionIndex();
+	        if (selection >=0){
+		{
+			String accnr = (String)model.getValueAt(selection, 0);
+			AccountManager accMgr = SingletonFactory.getAccountManager();
+			IAccount acc = accMgr.getAccountByAccountNumber(accnr);
+			dlgDeposite.setVisible(true);
+			deposite.setAccount(acc);
+			deposite.setAmount(dlgDeposite.getRetVal());
+			deposite.transact();
+			updateView();
+			
+		}			
+		}
 		System.out.println("Deposite is clicked");
 	}
 	public void buttonWithdraw_ActionPerformed(ActionEvent event){
-		System.out.println("Withdraw is clicked");
+		ITransaction withDraw = financialFactory.createTransaction(CommonResources.TEXT_WITHDRAW);
+		Dialog_Deposit dlgDeposite = new Dialog_Deposit(myView, null);
+		 int selection = myView.getTable().getSelectionModel().getMinSelectionIndex();
+	        if (selection >=0){
+		{
+			String accnr = (String)model.getValueAt(selection, 0);
+			AccountManager accMgr = SingletonFactory.getAccountManager();
+			IAccount acc = accMgr.getAccountByAccountNumber(accnr);
+			dlgDeposite.setVisible(true);
+			withDraw.setAccount(acc);
+			withDraw.setAmount(dlgDeposite.getRetVal());
+			withDraw.transact();
+			updateView();
+			
+		}			
+		}
+		System.out.println("Deposite is clicked");
 	}
 	public void buttonGenerateReport_ActionPerformed(ActionEvent event){
 		System.out.println("Report:");

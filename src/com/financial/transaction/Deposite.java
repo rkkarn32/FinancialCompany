@@ -15,6 +15,22 @@ public class Deposite implements ITransaction{
 		this.amount = amount;
 	}
 
+	public IAccount getAccount() {
+		return account;
+	}
+
+	public void setAccount(IAccount account) {
+		this.account = account;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
 	@Override
 	public void transact() {
 		account.deposite(amount);

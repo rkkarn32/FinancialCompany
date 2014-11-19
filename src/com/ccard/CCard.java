@@ -21,7 +21,7 @@ import com.financial.utilities.CommonResources;
 public class CCard {
 	
 	public static void main(String args[]) {
-		
+
 		System.out.println("CCard main :: ");
 		FinCo.main(null);
 
@@ -34,21 +34,21 @@ public class CCard {
 		personalCustomer.setEmail("koirala.rachana@gmail.com");
 		personalCustomer.setType(CommonResources.CUSTORMER_PERSON);
 
-		IAccount savingAccount = new SavingAccount(100, Utils.ACCOUNT_TYPE_SAVING);
-		savingAccount.setAccountHolder(personalCustomer);
+		IAccount goldAccount = new Gold(100,CreditCardCommonResources.CUSTORMER_GOLD);
+		goldAccount.setAccountHolder(personalCustomer);
 
 		AccountManager accountManager = new AccountManager();
-		accountManager.addAccount(savingAccount);
+		accountManager.addAccount(goldAccount);
 
 		ITransactionManager transactionManager = new TransactionManager();
 		
-		ITransaction deposit = new Deposite(savingAccount, 1000);
+		ITransaction deposit = new Deposite(goldAccount, 1000);
 		transactionManager.performOperation(deposit);
 		
-		ITransaction withdraw = new Withdraw(savingAccount, 510);
+		ITransaction withdraw = new Withdraw(goldAccount, 510);
 		transactionManager.performOperation(withdraw);
 		
-		//System.out.println(savingAccount.generateReport());
+		System.out.println(goldAccount.generateReport());
 		
 		//accountManager.addInterest(new CalculateInterestFunctor());
 		

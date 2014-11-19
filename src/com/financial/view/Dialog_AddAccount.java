@@ -20,6 +20,7 @@ public class Dialog_AddAccount extends JDialog {
 
 	private AbstractFrm parent;
 	private IAccount account;
+	
 	public Dialog_AddAccount(String title, AbstractFrm parent, IAccount account) {
 		super(parent);
 

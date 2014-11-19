@@ -7,10 +7,8 @@ import com.financial.persistance.AccountDao;
 import com.financial.persistance.IDao;
 
 public class AccountManager {
-
-	public static AccountManager accountManager = new AccountManager();
 	
-	private AccountDao<String> daoAccount;
+	private IDao<IAccount,String> daoAccount;
 
 	public AccountManager() {
 		this.daoAccount = new AccountDao<String>();
@@ -25,7 +23,7 @@ public class AccountManager {
 	}
 
 	public void addInterest(Functor functor) {
-		Iterator<IAccount> it = this.daoAccount.getAllList().iterator();
+		Iterator<IAccount> it = this.daoAccount.getAll().iterator();
 		while (it.hasNext()) {
 			IAccount account = it.next();
 			functor.compute(account);

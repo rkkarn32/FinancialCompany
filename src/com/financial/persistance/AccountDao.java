@@ -10,7 +10,7 @@ public class AccountDao<R> implements IDao<IAccount,R>{
 
 	private List<IAccount> myList = new ArrayList<IAccount>();
 	
-	public List<IAccount> getAllList() {
+	public List<IAccount> getAll() {
 		return myList;
 	}
 	

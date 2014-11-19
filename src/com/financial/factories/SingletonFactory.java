@@ -5,11 +5,15 @@ import com.financial.interfaces.ITransactionManager;
 import com.financial.transaction.TransactionManager;
 
 public class SingletonFactory {
+	
+	private static AccountManager accountManager = new AccountManager();
+	private static ITransactionManager transactionManager = new TransactionManager();
+		
 	public static ITransactionManager getTransactionManager(){
-		return TransactionManager.transactionManager;
+		return transactionManager;
 	}
 	
 	public static AccountManager getAccountManager(){
-		return AccountManager.accountManager;
+		return accountManager;
 	}
 }

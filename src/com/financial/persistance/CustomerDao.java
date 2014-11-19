@@ -1,5 +1,7 @@
 package com.financial.persistance;
 
+import java.util.List;
+
 import com.financial.customers.ICustomer;
 
 public class CustomerDao<R> implements IDao<ICustomer, R>{
@@ -18,6 +20,12 @@ public class CustomerDao<R> implements IDao<ICustomer, R>{
 
 	@Override
 	public ICustomer getAccount(R object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ICustomer> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

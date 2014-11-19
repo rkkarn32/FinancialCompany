@@ -9,14 +9,14 @@ import com.financial.interfaces.ITransactionManager;
 
 public class TransactionManager implements ITransactionManager{
 
-	public static TransactionManager transactionManager = new TransactionManager();
-	
 	private List<ITransaction> transactionList;
 	private List<ITransaction> undoList;
 	private List<ITransaction> redoList;
 	
 	public TransactionManager() {
 		this.transactionList = new ArrayList<ITransaction>();
+		this.transactionList = new ArrayList<ITransaction>();
+		this.redoList        = new ArrayList<ITransaction>();
 	}
 	
 	@Override

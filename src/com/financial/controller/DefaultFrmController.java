@@ -7,7 +7,11 @@ import java.util.List;
 
 import javax.swing.JButton;
 
+import sun.font.CreatedFontTracker;
+
 import com.financial.account.AccountManager;
+import com.financial.account.CalculateInterestFunctor;
+import com.financial.account.Functor;
 import com.financial.customers.ICustomer;
 import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
@@ -79,6 +83,10 @@ public class DefaultFrmController extends AbstractFrmController{
 		System.out.println("Account should be added");
 	}
 	public void buttonAddInterest_ActionPerformed(ActionEvent event){
+		AccountManager accMan = SingletonFactory.getAccountManager();
+		Functor<IAccount, Double> calInterest = new CalculateInterestFunctor(); 
+		accMan.addInterest(calInterest);
+		updateView();
 		System.out.println("Add interest is clicked");
 	}
 	public void buttonDeposite_ActionPerfomed(ActionEvent event){

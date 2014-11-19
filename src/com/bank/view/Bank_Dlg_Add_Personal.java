@@ -64,6 +64,10 @@ public class Bank_Dlg_Add_Personal extends Dialog_AddAccount {
 
 		ICustomer customer = financialFactory
 				.createCustomer(CommonResources.CUSTORMER_PERSON);
+		
+		
+		
+		
 		if (JRadioButton_Chk.isSelected()) {
 			account = financialFactory
 					.createAccount(Utils.ACCOUNT_TYPE_CHECKING);

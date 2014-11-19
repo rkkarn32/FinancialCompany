@@ -12,13 +12,13 @@ import com.financial.utilities.CommonResources;
 
 public abstract class AbstractAccount implements IAccount {
 
-	private String accountNumber;
-	private List<Entry> entryList;
-	private double totalBalance;
-	private ICustomer accountHolder;
-	private String accountType;
-	private double interestRate;
-	private Vector vector;
+	protected String accountNumber;
+	protected List<Entry> entryList;
+	protected double totalBalance;
+	protected ICustomer accountHolder;
+	protected String accountType;
+	protected double interestRate;
+	protected Vector vector;
 
 	private static int counter = 1000;
 

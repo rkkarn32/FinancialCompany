@@ -8,9 +8,15 @@ import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 import com.bank.view.BankFrm;
+import com.bank.view.Bank_Dlg_Add;
+import com.financial.account.AccountManager;
 import com.financial.controller.DefaultFrmController;
+import com.financial.customers.ICustomer;
+import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
+import com.financial.utilities.CommonResources;
 import com.financial.view.AbstractFrm;
+import com.financial.view.Dialog_AddAccount;
 
 public class BankFrmController extends DefaultFrmController {
 
@@ -62,7 +68,18 @@ public class BankFrmController extends DefaultFrmController {
 	
 	@Override
 	public void buttonAddAccount_ActionPerformed(ActionEvent event){
-		System.out.println("This is not working");
+		//ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
+		IAccount account = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
+
+		//customer.addAccount(account);
+		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add("MyDialog", myBankView, account);
+		
+		dialogAdd.setVisible(true);
+		AccountManager aManager = SingletonFactory.getAccountManager();
+		aManager.addAccount(account);
+		model.addRow(account.getVector());
+		updateView();
+		System.out.println("Account should be added");
 	}
 
 	private void buttonNewButton_ActionPerformed(ActionEvent event) {

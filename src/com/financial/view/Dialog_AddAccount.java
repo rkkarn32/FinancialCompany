@@ -171,15 +171,15 @@ public class Dialog_AddAccount extends JDialog {
 	JLabel JLabel5 = new JLabel();
 //	JLabel JLabel6 = new JLabel();
 	JLabel JLabel7 = new JLabel();
-	JTextField txtName = new JTextField();
-	JTextField txtCity = new JTextField();
-	JTextField txtState = new JTextField();
-	JTextField txtStreet = new JTextField();
-	JTextField txtZip = new JTextField();
+	protected JTextField txtName = new JTextField();
+	protected JTextField txtCity = new JTextField();
+	protected JTextField txtState = new JTextField();
+	protected JTextField txtStreet = new JTextField();
+	protected JTextField txtZip = new JTextField();
 //	JTextField JTextField_NoOfEmp = new JTextField();
-	JTextField txtEmail = new JTextField();
-	JButton JButton_OK = new JButton();
-	JButton JButton_Calcel = new JButton();
+	protected JTextField txtEmail = new JTextField();
+	protected JButton JButton_OK = new JButton();
+	protected JButton JButton_Calcel = new JButton();
 //	JLabel JLabel8 = new JLabel();
 //	JTextField JTextField_ACNR = new JTextField();
 

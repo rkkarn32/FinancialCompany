@@ -121,13 +121,13 @@ public class Dialog_AddAccount extends JDialog {
 		public void actionPerformed(java.awt.event.ActionEvent event) {
 			Object object = event.getSource();
 			if (object == JButton_OK)
-				JButtonOK_actionPerformed(event);
+				buttonOK_actionPerformed(event);
 			else if (object == JButton_Calcel)
-				JButtonCalcel_actionPerformed(event);
+				buttonCancel_actionPerformed(event);
 		}
 	}
 
-	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event) {
+	void buttonOK_actionPerformed(java.awt.event.ActionEvent event) {
 		// parentframe.accountnr=JTextField_ACNR.getText();
 		// parentframe.clientName=JTextField_NAME.getText();
 		// parentframe.street=JTextField_STR.getText();
@@ -147,7 +147,7 @@ public class Dialog_AddAccount extends JDialog {
 
 	}
 
-	void JButtonCalcel_actionPerformed(java.awt.event.ActionEvent event) {
+	void buttonCancel_actionPerformed(java.awt.event.ActionEvent event) {
 		dispose();
 
 	}

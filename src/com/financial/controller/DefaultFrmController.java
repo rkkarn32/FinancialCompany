@@ -2,6 +2,7 @@ package com.financial.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -20,6 +21,7 @@ public class DefaultFrmController extends AbstractFrmController{
 	
 	private final ButtonListener listener = new ButtonListener();
 	private DefaultFrm myView ;
+	private List<JButton> buttonList = new ArrayList<JButton>();
 	
 	public DefaultFrmController(List<IAccount> accountList, DefaultFrm view) {
 		super(accountList, view);
@@ -38,7 +40,7 @@ public class DefaultFrmController extends AbstractFrmController{
 	@Override
 	public void addActionListenerToView() {
 		//view.getButtonAddAccount().addActionListener(listener);
-		for (JButton button: view.getButtonList()) {
+		for (JButton button: myView.getButtonList()) {
 			button.addActionListener(listener);
 			System.out.println();
 		}

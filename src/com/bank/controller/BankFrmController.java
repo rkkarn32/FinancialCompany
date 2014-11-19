@@ -31,7 +31,9 @@ public class BankFrmController extends DefaultFrmController{
 	@Override
 	public void addActionListenerToView() {
 		//view.getButtonAddAccount().addActionListener(listener);
-		for (JButton button: view.getButtonList()) {
+		super.addActionListenerToView();
+		
+		for (JButton button: myBankView.getButtonList()) {
 			button.addActionListener(listener);
 			System.out.println();
 		}

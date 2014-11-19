@@ -15,8 +15,8 @@ public class CommonResources {
 	public static String CUSTORMER_COMPANY            = "Company";
 	public static String CUSTORMER_PERSON             = "Person";
 	
-	public static String ACCOUNT_DEFAULT_TYPE         = "DEFAULT";
-	public static double ACCOUNT_DEFAULT_INTERESTRATE = 10.1;
+	public static String ACCOUNT_TYPE_DEFAULT         = "Account";
+	public static double ACCOUNT_DEFAULT_INTEREST_RATE = 10.1;
 	
 	public static String TEXT_DEPOSIT = "Deposite";
 	public static String TEXT_WITHDRAW = "Withdraw";
@@ -26,10 +26,8 @@ public class CommonResources {
 	public static String ACCOUNTFACTORY = "Account Factory";
 	public static String TRANSACTIONFACTORY = "Transaction Factory";
 	public static String CUTOMERFACTORY = "Customer Factory";
-	
-	
-	
-	public static String ACCOUNT_TYPE_DEFAULT = "Account";
+
+	//public static String ACCOUNT_TYPE_DEFAULT = "Account";
 
 	public static boolean startUp = false;
 	public static Session session;

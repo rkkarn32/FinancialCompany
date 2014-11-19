@@ -6,7 +6,7 @@ public class Account extends AbstractAccount {
 
 	public Account(double initialBalance) {
 		super(initialBalance);
-		setAccountType(CommonResources.ACCOUNT_DEFAULT_TYPE);
+		setAccountType(CommonResources.ACCOUNT_TYPE_DEFAULT);
 		setInterestRate(10.1);
 	}
 

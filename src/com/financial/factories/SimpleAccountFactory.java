@@ -10,7 +10,7 @@ public class SimpleAccountFactory {
 	public static IAccount createAccount(String accountString){
 		
 		if(accountString.equals(CommonResources.ACCOUNT_TYPE_DEFAULT))
-			return new Account(1245);
+			return new Account(1000);
 		return null;
 		
 	}

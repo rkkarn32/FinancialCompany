@@ -25,13 +25,16 @@ public class CheckingAccount extends Account {
 
 	public String hasToSendMail(Entry entry) {
 		if (this.getAccountHolder() instanceof Company) {
+			super.sendEmail(entry, "Transaction Done");
 			return "Transaction Done";
 		} else if (this.getAccountHolder() instanceof Person) {
 			if (this.getBalance() < 0) {
+				super.sendEmail(entry, "Balance is negative");
 				return "Balance is negative";
-			} else if (entry.getEntryInfo().equals(
-					CommonResources.TEXT_WITHDRAW)
+			} 
+			if (entry.getEntryInfo().equals(CommonResources.TEXT_WITHDRAW)
 					&& entry.getAmount() > 500) {
+				super.sendEmail(entry, "Withdraw is larger than $500");
 				return "Withdraw is larger than $500";
 			}
 		}

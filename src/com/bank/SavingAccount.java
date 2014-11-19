@@ -14,7 +14,7 @@ public class SavingAccount extends Account{
 
 	@Override
 	public void setAccountType(String accountType) {
-		super.setAccountType(Utils.ACCOUNT_TYPE_CHECKING);
+		super.setAccountType(Utils.ACCOUNT_TYPE_SAVING);
 	}
 
 	@Override
@@ -24,13 +24,17 @@ public class SavingAccount extends Account{
 
 	public String hasToSendMail(Entry entry) {
 		if (this.getAccountHolder() instanceof Company) {
+			super.sendEmail(entry, "Transaction Done");
 			return "Transaction Done";
 		} else if (this.getAccountHolder() instanceof Person) {
 			if (this.getBalance() < 0) {
+				super.sendEmail(entry, "Balance is negative");
 				return "Balance is negative";
-			} else if (entry.getEntryInfo().equals(
-					CommonResources.TEXT_WITHDRAW)
+			} 
+			if (entry.getEntryInfo().equals(CommonResources.TEXT_WITHDRAW)
 					&& entry.getAmount() > 500) {
+				System.out.println("withdraw greater than 500");
+				super.sendEmail(entry, "Withdraw is larger than $500");
 				return "Withdraw is larger than $500";
 			}
 		}

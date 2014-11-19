@@ -5,43 +5,45 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.financial.interfaces.IAccount;
+import com.financial.persistance.DaoAccount;
+import com.financial.persistance.IDao;
 
 public class AccountManager {
 
 	public static AccountManager accountManager = new AccountManager();
-	private List<IAccount> accountList;
+	
+	private DaoAccount<String> daoAccount;
 
 	public AccountManager() {
-		accountList = new ArrayList<IAccount>();
+		this.daoAccount = new DaoAccount<String>();
 	}
 
 	public void addAccount(IAccount newAccount) {
-		this.accountList.add(newAccount);
+		this.daoAccount.persist(newAccount);
 	}
 
 	public void removeAccount(IAccount account) {
-		this.accountList.remove(account);
-	}
-
-	public List<IAccount> getAccountList() {
-		return this.accountList;
+		this.daoAccount.remove(account);
 	}
 
 	public void addInterest(Functor functor) {
-		Iterator<IAccount> it = this.accountList.iterator();
+		Iterator<IAccount> it = this.daoAccount.getAllList().iterator();
 		while (it.hasNext()) {
 			IAccount account = it.next();
 			functor.compute(account);
 		}
 	}
+
 	public IAccount getAccountByAccountNumber(String accountNumber) {
-		Iterator<IAccount> it = this.accountList.iterator();
-		while (it.hasNext()) {
-			IAccount account = it.next();
-			if (account.getAccountNumber().equals(accountNumber)) {
-				return account;
-			}
-		}
-		return null;
+		
+		return this.daoAccount.getAccount(accountNumber);
+	}
+	
+	public IDao<IAccount,String> getDaoAccount() {
+		return daoAccount;
+	}
+
+	public void setDaoAccount(DaoAccount<String> daoAccount) {
+		this.daoAccount = daoAccount;
 	}
 }

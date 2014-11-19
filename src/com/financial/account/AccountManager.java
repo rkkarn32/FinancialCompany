@@ -3,17 +3,17 @@ package com.financial.account;
 import java.util.Iterator;
 
 import com.financial.interfaces.IAccount;
-import com.financial.persistance.DaoAccount;
+import com.financial.persistance.AccountDao;
 import com.financial.persistance.IDao;
 
 public class AccountManager {
 
 	public static AccountManager accountManager = new AccountManager();
 	
-	private DaoAccount<String> daoAccount;
+	private AccountDao<String> daoAccount;
 
 	public AccountManager() {
-		this.daoAccount = new DaoAccount<String>();
+		this.daoAccount = new AccountDao<String>();
 	}
 
 	public void addAccount(IAccount newAccount) {
@@ -41,7 +41,7 @@ public class AccountManager {
 		return daoAccount;
 	}
 
-	public void setDaoAccount(DaoAccount<String> daoAccount) {
+	public void setDaoAccount(AccountDao<String> daoAccount) {
 		this.daoAccount = daoAccount;
 	}
 }

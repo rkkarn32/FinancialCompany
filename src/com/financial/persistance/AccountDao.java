@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.financial.interfaces.IAccount;
 
-public class DaoAccount<R> implements IDao<IAccount,R>{
+public class AccountDao<R> implements IDao<IAccount,R>{
 
 	private List<IAccount> myList = new ArrayList<IAccount>();
 	

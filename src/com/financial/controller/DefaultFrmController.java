@@ -5,10 +5,13 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
 import com.financial.view.DefaultFrm;
+import com.financial.view.Dialog_AddAccount;
+import com.sun.xml.internal.ws.api.server.Container;
 
 public class DefaultFrmController extends AbstractFrmController{
 	
@@ -57,6 +60,9 @@ public class DefaultFrmController extends AbstractFrmController{
 	}
 	
 	public void buttonAddAccount_ActionPerformed(ActionEvent event){
+		Dialog_AddAccount addAccount = new Dialog_AddAccount("Default Account",this.myView); 
+		addAccount.setVisible(true);
+		
 		System.out.println("Account should be added");
 	}
 	private void buttonAddInterest_ActionPerformed(ActionEvent event){

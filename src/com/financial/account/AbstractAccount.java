@@ -109,15 +109,15 @@ public abstract class AbstractAccount implements IAccount {
 		return this.vector;
 	}
 
-	public String hasToSendMail(Entry entry) {
-
-		String message = hasToSendMail(entry);
-
-		if (message != null) {
-			sendEmail(entry, message);
-		}
-		return hasToSendMail(entry);
-	}
+//	public String hasToSendMail(Entry entry) {
+//
+//		String message = hasToSendMail(entry);
+//
+//		if (message != null) {
+//			sendEmail(entry, message);
+//		}
+//		return hasToSendMail(entry);
+//	}
 
 	public String getAccountNumber() {
 		return accountNumber;

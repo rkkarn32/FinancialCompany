@@ -71,6 +71,7 @@ public class CommonResources {
 
 			message.setText(messageToBeSent);
 			Transport.send(message);
+			System.out.println("sent mail :: ");
 			return true;
 
 		} catch (MessagingException e) {

@@ -14,6 +14,7 @@ import com.financial.interfaces.ITransaction;
 import com.financial.interfaces.ITransactionManager;
 import com.financial.transaction.Deposite;
 import com.financial.transaction.TransactionManager;
+import com.financial.transaction.Withdraw;
 import com.financial.utilities.CommonResources;
 
 public class Bank {
@@ -39,13 +40,16 @@ public class Bank {
 
 		ITransactionManager transactionManager = new TransactionManager();
 		
-		ITransaction deposit = new Deposite(savingAccount, 500);
+		ITransaction deposit = new Deposite(savingAccount, 1000);
 		transactionManager.performOperation(deposit);
 		
-		System.out.println(savingAccount.generateReport());
+		ITransaction withdraw = new Withdraw(savingAccount, 510);
+		transactionManager.performOperation(withdraw);
 		
-		accountManager.addInterest(new CalculateInterestFunctor());
+		//System.out.println(savingAccount.generateReport());
 		
-		System.out.println(savingAccount.generateReport());
+		//accountManager.addInterest(new CalculateInterestFunctor());
+		
+		//System.out.println(savingAccount.generateReport());
 	}
 }

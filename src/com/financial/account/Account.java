@@ -19,5 +19,11 @@ public class Account extends AbstractAccount {
 	public void setInterestRate(double interestRate) {
 		super.setInterestRate(interestRate);
 	}
+
+	@Override
+	public String hasToSendMail(Entry entry) {
+	
+		return null;
+	}
 	
 }

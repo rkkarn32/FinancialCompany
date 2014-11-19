@@ -64,6 +64,8 @@ public abstract class AbstractFrm extends JFrame{
 		mainPanel.setBounds(0, 0, wiegth, height);
 		super.setSize(wiegth, height);
 	}
+	
+	
 	public abstract List<JButton> getButtons();
 	public abstract List<JButton> getButtonList();
 	public abstract DefaultTableModel getModel();

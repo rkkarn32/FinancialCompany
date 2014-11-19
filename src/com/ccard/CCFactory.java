@@ -11,7 +11,7 @@ public class CCFactory extends FinancialFactory {
 
 	public IAccount createAccount(String accountString) {
 
-		if (accountString.equals(CommonResources.ACCOUNT))
+		if (accountString.equals(CommonResources.ACCOUNT_TYPE_DEFAULT))
 			return new Account(1245);
 		if (accountString.equals(CreditCardCommonResources.CREDITCARD_BRONZE))
 			return new Bronze(1245);

@@ -45,7 +45,7 @@ public class DefaultFrmController extends AbstractFrmController{
 	public class ButtonListener implements ActionListener{
 
 		@Override
-		public void actionPerformed(ActionEvent e) {
+		public void c(ActionEvent e) {
 			if(e.getSource() == myView.getButtonAddAccount())
 					buttonAddAccount_ActionPerformed(e);
 			else if(e.getSource() == myView.getButtonAddInterest())

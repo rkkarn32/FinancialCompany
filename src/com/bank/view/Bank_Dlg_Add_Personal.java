@@ -2,8 +2,10 @@ package com.bank.view;
 
 import java.awt.Container;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 import com.bank.Utils;
 import com.financial.customers.Address;
@@ -29,6 +31,7 @@ public class Bank_Dlg_Add_Personal extends Dialog_AddAccount{
 		JRadioButton_Sav = new JRadioButton();
 		JLabel6 = new JLabel();
 		JLabel8 = new JLabel();
+		JTextField_BD = new JTextField();
 		
 		
 		container.add(JLabel6);
@@ -43,6 +46,11 @@ public class Bank_Dlg_Add_Personal extends Dialog_AddAccount{
 		JRadioButton_Sav.setActionCommand("Savings");
 		container.add(JRadioButton_Sav);
 		JRadioButton_Sav.setBounds(36,36,84,24);
+		
+		JLabel6.setText("DOB");
+		container.add(JLabel6);
+		container.add(JTextField_BD);
+		JTextField_BD.setBounds(120,216,156,20);
 	}
 	
 	
@@ -68,5 +76,9 @@ public class Bank_Dlg_Add_Personal extends Dialog_AddAccount{
 	JRadioButton JRadioButton_Sav = new JRadioButton();
 	JLabel JLabel6 = new JLabel();
 	JLabel JLabel8 = new JLabel();
+	
+	
+	JLabel jLabel9 = new JLabel();
+	javax.swing.JTextField JTextField_BD = new javax.swing.JTextField();
 
 }

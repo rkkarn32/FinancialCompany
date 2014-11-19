@@ -46,10 +46,6 @@ public class BankFrm extends DefaultFrm {
 	
 	@Override
 	public List<JButton> getButtonList() {
-		// TODO Auto-generated method stub
-		//this.buttonList.addAll(super.getButtonList());
-		//return this.buttonList;
-		//this.buttonList.addAll(super.getButtonList());
 		buttonAddAccount.setText("Add personal Account");
 		return this.buttonList;
 	}

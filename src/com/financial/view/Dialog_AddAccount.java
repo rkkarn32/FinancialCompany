@@ -1,6 +1,7 @@
 package com.financial.view;
 
 import java.awt.Container;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -19,8 +20,8 @@ public class Dialog_AddAccount extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private AbstractFrm parent;
-	private IAccount account;
+	protected AbstractFrm parent;
+	protected IAccount account;
 	
 	public Dialog_AddAccount(String title, AbstractFrm parent, IAccount account) {
 		super(parent);
@@ -128,6 +129,15 @@ public class Dialog_AddAccount extends JDialog {
 				buttonCancel_actionPerformed(event);
 		}
 	}
+	
+	
+	public void doFurtherWorks(){
+		Person person = new Person();
+		account.setAccountHolder(person);
+		account.getAccountHolder().setName(txtName.getText());
+		Address address = new Address(txtStreet.getText(), txtCity.getText(), txtCity.getText(), Integer.parseInt(txtZip.getText()));
+		account.getAccountHolder().setAddress(address);
+	}
 
 	void buttonOK_actionPerformed(java.awt.event.ActionEvent event) {
 		// parentframe.accountnr=JTextField_ACNR.getText();
@@ -142,11 +152,7 @@ public class Dialog_AddAccount extends JDialog {
 		// parentframe.accountType="S";
 		// parentframe.newaccount=true;
 		
-		Person person = new Person();
-		account.setAccountHolder(person);
-		account.getAccountHolder().setName(txtName.getText());
-		Address address = new Address(txtStreet.getText(), txtCity.getText(), txtCity.getText(), Integer.parseInt(txtZip.getText()));
-		account.getAccountHolder().setAddress(address);
+		doFurtherWorks();
 		dispose();
 
 	}

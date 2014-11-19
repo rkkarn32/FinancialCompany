@@ -13,11 +13,11 @@ public class DefaultFrm extends AbstractFrm {
 
 	private static final long serialVersionUID = 1L;
 
-	private JButton buttonDeposite;// = new JButton();
-	private JButton buttonWithDraw;// = new JButton();
-	private JButton buttonAddInterest;//= new JButton();
-	private JButton buttonExit;
-	private JButton buttonAddAccount;
+	protected JButton buttonDeposite;// = new JButton();
+	protected JButton buttonWithDraw;// = new JButton();
+	protected JButton buttonAddInterest;//= new JButton();
+	protected JButton buttonExit;
+	protected JButton buttonAddAccount;
 	
 	private List <JButton> buttonList;
 	

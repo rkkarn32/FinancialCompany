@@ -37,8 +37,9 @@ public class BankFrm extends DefaultFrm {
 		buttonCompanyAccount.setText("Add Company Account");
 		buttonCompanyAccount.setBounds(240,20,192,33);
 		buttonList.add(buttonCompanyAccount);
-		btnList.addAll(buttonList);
-		return btnList;
+		//btnList.addAll(buttonList);
+		buttonList.addAll(btnList);
+		return buttonList;
 	}
 	
 	
@@ -46,6 +47,8 @@ public class BankFrm extends DefaultFrm {
 	@Override
 	public List<JButton> getButtonList() {
 		// TODO Auto-generated method stub
+		//this.buttonList.addAll(super.getButtonList());
+		//return this.buttonList;
 		//this.buttonList.addAll(super.getButtonList());
 		return this.buttonList;
 	}

@@ -43,7 +43,7 @@ public abstract class AbstractFrm extends JFrame{
 		scrollPane.getViewport().add(table);
         table.setBounds(0, 0, 420, 0);
 		
-        List<JButton> bList = getButtonList();
+        List<JButton> bList = getButtons();
         
 		if(bList != null && bList.size()!=0)
 		for (JButton button: bList)

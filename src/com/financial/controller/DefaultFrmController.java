@@ -77,16 +77,16 @@ public class DefaultFrmController extends AbstractFrmController{
 		updateView();
 		System.out.println("Account should be added");
 	}
-	private void buttonAddInterest_ActionPerformed(ActionEvent event){
+	public void buttonAddInterest_ActionPerformed(ActionEvent event){
 		System.out.println("Add interest is clicked");
 	}
-	private void buttonDeposite_ActionPerfomed(ActionEvent event){
+	public void buttonDeposite_ActionPerfomed(ActionEvent event){
 		System.out.println("Deposite is clicked");
 	}
-	private void buttonWithdraw_ActionPerformed(ActionEvent event){
+	public void buttonWithdraw_ActionPerformed(ActionEvent event){
 		System.out.println("Withdraw is clicked");
 	}
-	private void buttonExit_ActionPerformed(ActionEvent event){
+	public void buttonExit_ActionPerformed(ActionEvent event){
 		System.exit(1);
 	}
 	

@@ -12,44 +12,53 @@ import com.financial.controller.DefaultFrmController;
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
 
-public class BankFrmController extends DefaultFrmController{
+public class BankFrmController extends DefaultFrmController {
 
-	
-	private final ButtonListener listener = new ButtonListener();
+	private ButtonListener listener;// = new ButtonListener();
 	private BankFrm myBankView;
-	
+
 	public BankFrmController(List<IAccount> accountList, BankFrm view) {
 		super(accountList, view);
+		this.myBankView = view;
 	}
-	
+
 	@Override
 	public void setView(AbstractFrm view) {
 		super.setView(view);
-		this.myBankView= (BankFrm)view;
+		this.myBankView = (BankFrm) view;
 	}
-	
+
 	@Override
 	public void addActionListenerToView() {
-		//view.getButtonAddAccount().addActionListener(listener);
-		super.addActionListenerToView();
-		
-		for (JButton button: myBankView.getButtonList()) {
+		// view.getButtonAddAccount().addActionListener(listener);
+		// super.addActionListenerToView();
+		listener = new ButtonListener();
+		for (JButton button : view.getButtonList()) {
 			button.addActionListener(listener);
 			System.out.println();
 		}
 	}
-	
 
-	public class ButtonListener implements ActionListener{
+	public class ButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if(e.getSource() == myBankView.getButtonCompanyAccount())
+			if (e.getSource() == myBankView.getButtonAddAccount())
+				buttonAddAccount_ActionPerformed(e);
+			else if (e.getSource() == myBankView.getButtonAddInterest())
+				buttonAddInterest_ActionPerformed(e);
+			else if (e.getSource() == myBankView.getButtonDeposite())
+				buttonDeposite_ActionPerfomed(e);
+			else if (e.getSource() == myBankView.getButtonWithDraw())
+				buttonWithdraw_ActionPerformed(e);
+			else if (e.getSource() == myBankView.getButtonExit())
+				buttonExit_ActionPerformed(e);
+			else if (e.getSource() == myBankView.getButtonCompanyAccount())
 				buttonNewButton_ActionPerformed(e);
 		}
 	}
-	
-	private void buttonNewButton_ActionPerformed(ActionEvent event){
+
+	private void buttonNewButton_ActionPerformed(ActionEvent event) {
 		System.out.println("Add Company Account Added is clicked");
 	}
 }

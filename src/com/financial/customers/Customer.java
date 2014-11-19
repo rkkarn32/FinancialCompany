@@ -1,5 +1,6 @@
 package com.financial.customers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.financial.interfaces.IAccount;
@@ -11,20 +12,22 @@ public abstract class Customer implements ICustomer {
 	private List<IAccount> accountList;
 	private String type;
 	private IAddress address;
-	
-	//Default Customer
-	public Customer() {	}
-	
-	public Customer(String name, String email,
-			String type, IAddress address) {
+
+	// Default Customer
+	public Customer() {
+		this.accountList = new ArrayList<IAccount>();
+	}
+
+	public Customer(String name, String email, String type, IAddress address) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.type = type;
 		this.address = address;
+		this.accountList = new ArrayList<IAccount>();
 	}
 
-	private static int id=0;
+	private static int id = 0;
 
 	public static int getId() {
 		return id;
@@ -73,10 +76,11 @@ public abstract class Customer implements ICustomer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Name: " + getName() + "Type of Customer: " + getType() + "Email: " + getEmail();
+		return "Name: " + getName() + "Type of Customer: " + getType()
+				+ "Email: " + getEmail();
 	}
 
 	@Override
@@ -116,7 +120,7 @@ public abstract class Customer implements ICustomer {
 
 	@Override
 	public void update() {
-		
+
 	}
 
 }

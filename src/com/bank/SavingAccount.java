@@ -9,13 +9,12 @@ import com.financial.utilities.CommonResources;
 public class SavingAccount extends Account{
 	public SavingAccount(double initialBalance) {
 		super(initialBalance);
-		setAccountType(Utils.ACCOUNT_TYPE_CHECKING);
 		setInterestRate(7.1);
 	}
 
 	@Override
 	public void setAccountType(String accountType) {
-		super.setAccountType(accountType);
+		super.setAccountType(Utils.ACCOUNT_TYPE_CHECKING);
 	}
 
 	@Override

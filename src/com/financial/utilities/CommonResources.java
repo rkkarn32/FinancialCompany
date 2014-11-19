@@ -79,6 +79,7 @@ public class CommonResources {
 	}
 	
 	public static String splitString(String text){
+		System.out.println(text);
 		return text.substring(0, 2);
 	}
 }

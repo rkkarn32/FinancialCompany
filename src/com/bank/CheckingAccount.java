@@ -10,13 +10,12 @@ public class CheckingAccount extends Account {
 
 	public CheckingAccount(double initialBalance) {
 		super(initialBalance);
-		setAccountType(Utils.ACCOUNT_TYPE_CHECKING);
 		setInterestRate(5.1);
 	}
 
 	@Override
 	public void setAccountType(String accountType) {
-		super.setAccountType(accountType);
+		setAccountType(Utils.ACCOUNT_TYPE_CHECKING);
 	}
 
 	@Override

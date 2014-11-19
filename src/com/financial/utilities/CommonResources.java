@@ -28,7 +28,7 @@ public class CommonResources {
 	public static String CUTOMERFACTORY = "Customer Factory";
 	
 	
-	public static String ACCOUNT = "Account";
+	public static String ACCOUNT_TYPE_DEFAULT = "Account";
 
 	public static boolean startUp = false;
 	public static Session session;

@@ -27,5 +27,10 @@ public class Person extends Customer implements IPerson {
 		// TODO Auto-generated method stub
 		return super.getType();
 	}
+	@Override
+	public void setNumofEmp(int numofEmp) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

@@ -2,15 +2,23 @@ package com.financial.customers;
 
 public class Address implements IAddress{
 	
-	private String stret,city,state;
+	private String street,city,state;
 	private int zip;
+	
+	public Address(String street, String city, String state, int zip) {
+		
+		this.street = street;
+		this.city   = city;
+		this.state  = state;
+		this.zip    = zip;
+	}
 
 	public String getStret() {
-		return stret;
+		return street;
 	}
 
 	public void setStret(String stret) {
-		this.stret = stret;
+		this.street = stret;
 	}
 
 	public String getCity() {

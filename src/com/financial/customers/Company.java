@@ -1,5 +1,7 @@
 package com.financial.customers;
 
+import java.util.Date;
+
 public class Company extends Customer implements ICompany {
 	
 	private int numofEmp;
@@ -27,6 +29,12 @@ public class Company extends Customer implements ICompany {
 	public String getType() {
 		// TODO Auto-generated method stub
 		return super.getType();
+	}
+
+	@Override
+	public void setDateofbirth(Date dateofbirth) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

@@ -148,6 +148,7 @@ public abstract class AbstractAccount implements IAccount {
 
 	public void setAccountHolder(ICustomer accountHolder) {
 		this.accountHolder = accountHolder;
+		accountHolder.addAccount(this);
 	}
 
 	public String getAccountType() {

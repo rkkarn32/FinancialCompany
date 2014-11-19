@@ -106,7 +106,6 @@ public abstract class Customer implements ICustomer {
 	@Override
 	public void addAccount(IAccount account) {
 		this.accountList.add(account);
-
 	}
 
 	@Override

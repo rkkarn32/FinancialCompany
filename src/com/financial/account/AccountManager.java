@@ -1,8 +1,6 @@
 package com.financial.account;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import com.financial.interfaces.IAccount;
 import com.financial.persistance.DaoAccount;

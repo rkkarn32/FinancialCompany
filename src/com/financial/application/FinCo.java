@@ -63,8 +63,8 @@ public class FinCo {
 	public static IFrmController getController() {
 		return controller;
 	}
-	public void setController(IFrmController controller){
-		this.controller = controller;
+	public static void setController(IFrmController controller){
+		controller = controller;
 	}
 	
 	

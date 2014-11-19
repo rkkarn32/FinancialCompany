@@ -99,10 +99,4 @@ public class DefaultFrm extends AbstractFrm {
 	public JButton getButtonAddAccount() {
 		return buttonAddAccount;
 	}
-
-	
-
-	
-	
-	
 }

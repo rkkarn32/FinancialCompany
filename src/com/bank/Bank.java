@@ -2,6 +2,8 @@ package com.bank;
 
 import java.util.Date;
 
+import com.bank.controller.BankFrmController;
+import com.bank.view.BankFrm;
 import com.financial.account.AccountManager;
 import com.financial.account.CalculateInterestFunctor;
 import com.financial.application.FinCo;
@@ -9,6 +11,7 @@ import com.financial.customers.Address;
 import com.financial.customers.IAddress;
 import com.financial.customers.ICustomer;
 import com.financial.customers.Person;
+import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
 import com.financial.interfaces.ITransaction;
 import com.financial.interfaces.ITransactionManager;
@@ -20,8 +23,6 @@ import com.financial.utilities.CommonResources;
 public class Bank {
 
 	public static void main(String args[]) {
-		
-		FinCo.main(null);
 
 		ICustomer personalCustomer = new Person();
 		IAddress address = new Address("1000N fourth street", "Fairfield",
@@ -35,7 +36,7 @@ public class Bank {
 		IAccount savingAccount = new SavingAccount(100, Utils.ACCOUNT_TYPE_SAVING);
 		savingAccount.setAccountHolder(personalCustomer);
 
-		AccountManager accountManager = new AccountManager();
+		AccountManager accountManager = SingletonFactory.getAccountManager();
 		accountManager.addAccount(savingAccount);
 
 		ITransactionManager transactionManager = new TransactionManager();
@@ -46,10 +47,19 @@ public class Bank {
 		ITransaction withdraw = new Withdraw(savingAccount, 450);
 		transactionManager.performOperation(withdraw);
 		
-		//System.out.println(savingAccount.generateReport());
+		System.out.println(savingAccount.generateReport());
 		
 		accountManager.addInterest(new CalculateInterestFunctor());
 		
 		System.out.println(savingAccount.generateReport());
+		
+		
+		
+		
+		//new implementation for bank
+		BankFrm bankFrame                = new BankFrm("Bank View");
+		BankFrmController bankController = new BankFrmController(accountManager.getDaoAccount().getAll(), bankFrame);
+		FinCo.setController(bankController);
+		FinCo.main(null);
 	}
 }

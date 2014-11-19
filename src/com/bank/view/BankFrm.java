@@ -13,53 +13,41 @@ public class BankFrm extends DefaultFrm {
 	private JButton buttonCompanyAccount;// = new JButton();
 	private List <JButton> buttonList;
 	
-
 	public BankFrm(String title) {
 		super(title);
 		
 	}
-	
-	
-
 	public JButton getButtonCompanyAccount() {
 		return buttonCompanyAccount;
 	}
 
-
-
 	public void setButtonCompanyAccount(JButton buttonCompanyAccount) {
 		this.buttonCompanyAccount = buttonCompanyAccount;
 	}
-
-
-
 	/**
 	 * 
 	 */
 	
-	
 	@Override
 	public List<JButton> getButtons() {
-		
+		List<JButton> btnList = super.getButtons();
 		buttonList = new ArrayList<JButton>();
-		
-		
 		buttonCompanyAccount = new JButton();
 		
 		buttonCompanyAccount.setText("Add Company Account");
-		buttonCompanyAccount.setBounds(468,104,96,33);
+		buttonCompanyAccount.setBounds(240,20,192,33);
 		buttonList.add(buttonCompanyAccount);
-		
-		
-		return buttonList;
-		
+		btnList.addAll(buttonList);
+		return btnList;
 	}
+	
+	
 	
 	@Override
 	public List<JButton> getButtonList() {
 		// TODO Auto-generated method stub
-		super.getButtonList().addAll(this.buttonList);
-		return super.getButtonList();
+		this.buttonList.addAll(super.getButtonList());
+		return this.buttonList;
 	}
 	
 	@Override

@@ -97,15 +97,13 @@ public abstract class AbstractAccount implements IAccount {
 	}
 
 	public Vector getVector() {
-
-		vector.add(this.accountNumber);
-		vector.add(this.accountHolder.getName());
-		vector.add(this.totalBalance);
-		for (Iterator<Entry> it = this.entryList.iterator(); it.hasNext();) {
-			Entry entry = it.next();
-			vector.add(entry);
-		}
-
+		this.vector = new Vector();
+		this.vector.add(this.accountNumber);
+		this.vector.add(this.accountHolder.getName());
+		this.vector.add(this.accountHolder.getAddress().getCity());
+		this.vector.add(this.accountType);
+		this.vector.add(this.accountHolder.getType());
+		this.vector.add(this.totalBalance);
 		return this.vector;
 	}
 

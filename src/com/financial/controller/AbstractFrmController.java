@@ -10,7 +10,7 @@ import com.financial.view.AbstractFrm;
 
 public abstract class AbstractFrmController implements IFrmController {
 	
-	protected DefaultTableModel model;
+	protected DefaultTableModel model= new DefaultTableModel();
 	protected AbstractFrm view;
 	protected  List<IAccount> accountList;
 	protected IFinancialFactory financialFactory;
@@ -18,7 +18,9 @@ public abstract class AbstractFrmController implements IFrmController {
 		super();
 		this.accountList = accountList;
 		this.view = view;
+		if(accountList != null)
 		for (IAccount iAccount : accountList) {
+			System.out.println(iAccount.getVector());
 			this.model.addRow(iAccount.getVector());
 		}
 	}

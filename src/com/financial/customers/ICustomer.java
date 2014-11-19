@@ -13,6 +13,7 @@ public interface ICustomer {
 	String getType();
 	String toString();
 	public String getName();
+	public IAddress getAddress() ;
 	
 	public void setDateofbirth(Date dateofbirth);
 	public void setNumofEmp(int numofEmp);

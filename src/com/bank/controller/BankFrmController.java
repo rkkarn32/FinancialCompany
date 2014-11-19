@@ -3,26 +3,23 @@ package com.bank.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+
 import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
+
 import com.bank.view.BankFrm;
 import com.financial.controller.DefaultFrmController;
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
-import com.financial.view.DefaultFrm;
-
 
 public class BankFrmController extends DefaultFrmController{
 
 	
 	private final ButtonListener listener = new ButtonListener();
 	private BankFrm myBankView;
-
 	
-	
-	
-	public BankFrmController(List<IAccount> accountList, DefaultFrm view) {
+	public BankFrmController(List<IAccount> accountList, BankFrm view) {
 		super(accountList, view);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
@@ -31,7 +28,6 @@ public class BankFrmController extends DefaultFrmController{
 		this.myBankView= (BankFrm)view;
 	}
 	
-
 	@Override
 	public void addActionListenerToView() {
 		//view.getButtonAddAccount().addActionListener(listener);
@@ -41,21 +37,17 @@ public class BankFrmController extends DefaultFrmController{
 		}
 	}
 	
+
 	public class ButtonListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == myBankView.getButtonCompanyAccount())
 				buttonNewButton_ActionPerformed(e);
-			
-			
 		}
 	}
 	
 	private void buttonNewButton_ActionPerformed(ActionEvent event){
 		System.out.println("Add Company Account Added is clicked");
 	}
-	
-	
-
 }

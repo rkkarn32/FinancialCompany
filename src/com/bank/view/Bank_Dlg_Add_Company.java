@@ -2,6 +2,7 @@ package com.bank.view;
 
 import java.awt.Container;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -32,8 +33,10 @@ public class Bank_Dlg_Add_Company extends Dialog_AddAccount{
 		JLabel6 = new JLabel();
 		JLabel8 = new JLabel();
 		JTextField_NumberEmp = new JTextField();
+		buttonGroup = new ButtonGroup();
 		
-		
+		buttonGroup.add(JRadioButton_Chk);
+		buttonGroup.add(JRadioButton_Sav);
 		container.add(JLabel6);
 		JLabel6.setForeground(java.awt.Color.black);
 		JLabel6.setBounds(12, 216, 96, 24);
@@ -76,6 +79,7 @@ public class Bank_Dlg_Add_Company extends Dialog_AddAccount{
 	JRadioButton JRadioButton_Sav = new JRadioButton();
 	JLabel JLabel6 = new JLabel();
 	JLabel JLabel8 = new JLabel();
+	ButtonGroup buttonGroup;
 	
 	
 	JLabel jLabel9 = new JLabel();

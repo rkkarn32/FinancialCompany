@@ -120,6 +120,7 @@ public class DefaultFrmController extends AbstractFrmController{
 			String accnr = (String)model.getValueAt(selection, 0);
 			AccountManager accMgr = SingletonFactory.getAccountManager();
 			IAccount acc = accMgr.getAccountByAccountNumber(accnr);
+			System.out.println("account :: " + acc + "withdraw" + withDraw);
 			dlgDeposite.setVisible(true);
 			withDraw.setAccount(acc);
 			withDraw.setAmount(dlgDeposite.getRetVal());

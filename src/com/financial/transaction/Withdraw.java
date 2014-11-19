@@ -7,7 +7,6 @@ public class Withdraw  implements ITransaction{
 	
 	private IAccount account;
 	private double amount;
-	
 
 	public Withdraw(IAccount account, double amount) {
 		super();
@@ -17,40 +16,34 @@ public class Withdraw  implements ITransaction{
 
 	@Override
 	public void transact() {
-		
-		account.withdraw(amount);
-		
+		this.account.withdraw(this.amount);
 	}
 
 	@Override
 	public void undoTransact() {
-		
 		account.deposite(amount);
-		
 	}
 
 	@Override
 	public IAccount getAccount() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.account;
 	}
 
 	@Override
 	public void setAccount(IAccount account) {
-		// TODO Auto-generated method stub
-		
+		this.account = account;
 	}
 
 	@Override
 	public double getAmount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.amount;
 	}
 
 	@Override
 	public void setAmount(double amount) {
-		// TODO Auto-generated method stub
-		
+		this.amount = amount;		
 	}
 
 }

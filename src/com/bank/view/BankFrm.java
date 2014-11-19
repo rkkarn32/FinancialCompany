@@ -42,8 +42,6 @@ public class BankFrm extends DefaultFrm {
 		return buttonList;
 	}
 	
-	
-	
 	@Override
 	public List<JButton> getButtonList() {
 		buttonAddAccount.setText("Add personal Account");

@@ -8,8 +8,19 @@ import com.financial.utilities.CommonResources;
 
 public class Person extends Customer implements IPerson{
 	
-	private Date dateofbirth;
+	
+	
+	
 
+
+	private Date dateofbirth;
+	
+	
+
+	public Person(String name, String email, String type, IAddress address) {
+		super(name, email, type, address);
+		// TODO Auto-generated constructor stub
+	}
 	public Date getDateofbirth() {
 		return dateofbirth;
 	}

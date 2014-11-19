@@ -12,6 +12,17 @@ public abstract class Customer implements ICustomer {
 	private String type;
 	private IAddress address;
 	
+	
+	
+	public Customer(String name, String email,
+			String type, IAddress address) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.type = type;
+		this.address = address;
+	}
+
 	private static int id=0;
 
 	public static int getId() {

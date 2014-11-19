@@ -12,8 +12,6 @@ import javax.swing.table.DefaultTableModel;
 public class DefaultFrm extends AbstractFrm {
 
 	private static final long serialVersionUID = 1L;
-	
-	
 
 	private JButton buttonDeposite;// = new JButton();
 	private JButton buttonWithDraw;// = new JButton();

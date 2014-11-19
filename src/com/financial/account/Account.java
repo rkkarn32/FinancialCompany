@@ -6,13 +6,12 @@ public class Account extends AbstractAccount {
 
 	public Account(double initialBalance) {
 		super(initialBalance);
-		setAccountType(CommonResources.ACCOUNT_TYPE_DEFAULT);
 		setInterestRate(10.1);
 	}
 
 	@Override
 	public void setAccountType(String accountType) {
-		super.setAccountType(accountType);
+		super.setAccountType(CommonResources.ACCOUNT_TYPE_DEFAULT);
 		;
 	}
 

@@ -51,7 +51,7 @@ public class DefaultFrmController extends AbstractFrmController{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == myView.getButtonAddAccount())
-					buttonAddAccount_ActionPerformed(e);
+					buttonPersonalAddAccount_ActionPerformed(e);
 			else if(e.getSource() == myView.getButtonAddInterest())
 				buttonAddInterest_ActionPerformed(e);
 			else if (e.getSource() == myView.getButtonDeposite())
@@ -63,7 +63,7 @@ public class DefaultFrmController extends AbstractFrmController{
 		}
 	}
 	
-	public void buttonAddAccount_ActionPerformed(ActionEvent event){ 
+	public void buttonPersonalAddAccount_ActionPerformed(ActionEvent event){ 
 		
 		//ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
 		IAccount account;// = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);

@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 import com.bank.view.BankFrm;
-import com.bank.view.Bank_Dlg_Add;
+import com.bank.view.Bank_Dlg_Add_Personal;
 import com.financial.account.AccountManager;
 import com.financial.controller.DefaultFrmController;
 import com.financial.customers.ICustomer;
@@ -50,7 +50,7 @@ public class BankFrmController extends DefaultFrmController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == myBankView.getButtonAddAccount())
-				buttonAddAccount_ActionPerformed(e);
+				buttonPersonalAddAccount_ActionPerformed(e);
 			else if (e.getSource() == myBankView.getButtonAddInterest())
 				buttonAddInterest_ActionPerformed(e);
 			else if (e.getSource() == myBankView.getButtonDeposite())
@@ -65,16 +65,16 @@ public class BankFrmController extends DefaultFrmController {
 	}
 
 	@Override
-	public void buttonAddAccount_ActionPerformed(ActionEvent event) {
+	public void buttonPersonalAddAccount_ActionPerformed(ActionEvent event) {
 		// ICustomer customer =
 		// financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
 		IAccount account;// =
 							// financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
 
 		// customer.addAccount(account);
-		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add("MyDialog", myBankView,
+		Dialog_AddAccount dialogAdd = new Bank_Dlg_Add_Personal("MyDialog", myBankView,
 				financialFactory);
-
+		dialogAdd.setTitle("Add Personal Account");
 		dialogAdd.setVisible(true);
 		account = dialogAdd.getAccount();
 		if (account != null) {

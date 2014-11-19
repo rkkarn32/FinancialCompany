@@ -61,8 +61,8 @@ public class BankFrm extends DefaultFrm {
 		model.addColumn("AccountNr ");
 		model.addColumn("Name");
 		model.addColumn("City");
-		model.addColumn("P/C");
 		model.addColumn("Ch/S");
+		model.addColumn("P/C");
 		model.addColumn("Amount");
 		
 		return model;

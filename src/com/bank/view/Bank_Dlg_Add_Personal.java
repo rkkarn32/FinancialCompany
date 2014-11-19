@@ -5,16 +5,19 @@ import java.awt.Container;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
+import com.bank.Utils;
 import com.financial.customers.Address;
+import com.financial.customers.ICustomer;
 import com.financial.customers.Person;
 import com.financial.factories.IFinancialFactory;
 import com.financial.utilities.CommonResources;
 import com.financial.view.AbstractFrm;
 import com.financial.view.Dialog_AddAccount;
+import com.sun.org.apache.bcel.internal.generic.IUSHR;
 
-public class Bank_Dlg_Add extends Dialog_AddAccount{
+public class Bank_Dlg_Add_Personal extends Dialog_AddAccount{
 
-	public Bank_Dlg_Add(String title, AbstractFrm parent, IFinancialFactory financialFactory) {
+	public Bank_Dlg_Add_Personal(String title, AbstractFrm parent, IFinancialFactory financialFactory) {
 		super(title, parent, financialFactory);
 		// TODO Auto-generated constructor stub
 	}
@@ -46,9 +49,12 @@ public class Bank_Dlg_Add extends Dialog_AddAccount{
 	@Override
 	public void doFurtherWorks(){
 		
-		Person person = new Person();
-		account = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
-		account.setAccountHolder(person);
+		ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
+		if(JRadioButton_Chk.isSelected())
+			account = financialFactory.createAccount(Utils.ACCOUNT_TYPE_CHECKING);
+		else
+			account = financialFactory.createAccount(Utils.ACCOUNT_TYPE_SAVING);
+		account.setAccountHolder(customer);
 		account.getAccountHolder().setName(txtName.getText());
 		Address address = new Address(txtStreet.getText(), txtCity.getText(), txtCity.getText(), Integer.parseInt(txtZip.getText()));
 		account.getAccountHolder().setAddress(address);

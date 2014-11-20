@@ -10,7 +10,7 @@ import com.financial.view.DefaultFrm;
 public class CCardFrm extends DefaultFrm{
 	
 	private JButton buttonGenerateBill;// = new JButton();
-	private List<JButton> buttonList;
+	private List<JButton> cardButtonList;
 	
 	public CCardFrm(String title) {
 		super(title);
@@ -30,8 +30,8 @@ public class CCardFrm extends DefaultFrm{
 	@Override
 	public List<JButton> getButtons() {
 		
-		buttonList         = new ArrayList<JButton>();
 		List<JButton> bList = super.getButtons();
+		cardButtonList         = new ArrayList<JButton>();
 		
 		buttonAddAccount.setText("Add Credit Card");
 		getButtonReport().setText("Generate bill");
@@ -41,13 +41,13 @@ public class CCardFrm extends DefaultFrm{
 //		buttonGenerateBill.setBounds(468,104,96,33);
 //		buttonList.add(buttonGenerateBill);
 		
-		buttonList.addAll(bList);
-		return buttonList;
+		cardButtonList.addAll(bList);
+		return cardButtonList;
 	}
 	
 	@Override
 	public List<JButton> getButtonList() {
-		return buttonList;
+		return cardButtonList;
 	}
 	
 	@Override

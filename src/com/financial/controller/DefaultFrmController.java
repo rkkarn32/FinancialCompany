@@ -94,11 +94,13 @@ public class DefaultFrmController extends AbstractFrmController{
 	}
 	public void buttonDeposite_ActionPerfomed(ActionEvent event){
 		ITransaction deposite = financialFactory.createTransaction(CommonResources.TEXT_DEPOSIT);
-		Dialog_Deposit dlgDeposite = new Dialog_Deposit(myView, null);
+		
 		 int selection = myView.getTable().getSelectionModel().getMinSelectionIndex();
 	        if (selection >=0){
 		{
+			
 			String accnr = (String)model.getValueAt(selection, 0);
+			Dialog_Deposit dlgDeposite = new Dialog_Deposit(myView, accnr);
 			AccountManager accMgr = SingletonFactory.getAccountManager();
 			IAccount acc = accMgr.getAccountByAccountNumber(accnr);
 			dlgDeposite.setVisible(true);
@@ -113,11 +115,12 @@ public class DefaultFrmController extends AbstractFrmController{
 	}
 	public void buttonWithdraw_ActionPerformed(ActionEvent event){
 		ITransaction withDraw = financialFactory.createTransaction(CommonResources.TEXT_WITHDRAW);
-		Dialog_Deposit dlgDeposite = new Dialog_Deposit(myView, null);
+		
 		 int selection = myView.getTable().getSelectionModel().getMinSelectionIndex();
 	        if (selection >=0){
 		{
 			String accnr = (String)model.getValueAt(selection, 0);
+			Dialog_Deposit dlgDeposite = new Dialog_Deposit(myView, accnr);
 			AccountManager accMgr = SingletonFactory.getAccountManager();
 			IAccount acc = accMgr.getAccountByAccountNumber(accnr);
 			System.out.println("account :: " + acc + "withdraw" + withDraw);

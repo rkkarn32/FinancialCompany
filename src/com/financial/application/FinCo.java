@@ -15,9 +15,7 @@ public class FinCo {
 	
 	private static IFrmController controller;
 	//private static IFinancialFactory factory;
-	
-	
-	
+		
 	/*
 	 * Main Application for Factory
 	 */
@@ -58,8 +56,4 @@ public class FinCo {
 	public static void setController(IFrmController controller){
 		FinCo.controller = controller;
 	}
-	
-	
-	
-	
 }

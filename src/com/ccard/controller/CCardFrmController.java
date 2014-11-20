@@ -14,12 +14,13 @@ import com.financial.view.AbstractFrm;
 import com.financial.view.Dialog_Report;
 
 public class CCardFrmController extends DefaultFrmController {
-	private ButtonListener listener = new ButtonListener();
+	private ButtonListener cardListener;
 
 	private CCardFrm myCCardView;
 
 	public CCardFrmController(List<IAccount> accountList, CCardFrm view) {
 		super(accountList, view);
+		myCCardView = view;
 		// view.getButtonAddAccount().setText("Add Credit Card");
 	}
 
@@ -31,8 +32,9 @@ public class CCardFrmController extends DefaultFrmController {
 
 	@Override
 	public void addActionListenerToView() {
+		cardListener = new ButtonListener();
 		for (JButton button : view.getButtonList()) {
-			button.addActionListener(listener);
+			button.addActionListener(cardListener);
 			System.out.println(button.getText());
 		}
 	}

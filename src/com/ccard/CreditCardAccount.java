@@ -36,21 +36,14 @@ public abstract class CreditCardAccount extends AbstractAccount {
 	public  void setAccountType(String accountType){
 		this.accountType = accountType;
 	}
-		
-	
-	
-	
 	private Vector returnVector;
 	
 	public Date getExpDate() {
 		return expDate;
 	}
-
-
 	public void setExpDate(Date expDate) {
 		this.expDate = expDate;
 	}
-
 
 	public Vector getVector() {
 		returnVector.add(super.getAccountHolder().getName());
@@ -61,16 +54,11 @@ public abstract class CreditCardAccount extends AbstractAccount {
 		return returnVector;
 	}
 	
-
 	public CreditCardAccount(double initialBalance, String creditCardType) {
 		super(initialBalance, creditCardType);
-
 	}
 
 	public StringBuilder generateMonthlyBills() {
-		
-		
-	
 		Calendar aCalendar = Calendar.getInstance();
 		// add -1 month to current month
 		aCalendar.add(Calendar.MONTH, -1);
@@ -86,8 +74,6 @@ public abstract class CreditCardAccount extends AbstractAccount {
 		Date lastDateOfPreviousMonth = aCalendar.getTime();
 		System.out.println(lastDateOfPreviousMonth);
 		
-		
-
 		for (Entry e : getEntryList()) {
 			if (e.getEntryDate().after(lastDateOfPreviousMonth)) {
 
@@ -97,37 +83,21 @@ public abstract class CreditCardAccount extends AbstractAccount {
 				if (e.getEntryInfo().equals(CommonResources.TEXT_WITHDRAW)) {
 					totalCharges = e.getAmount();
 				}
-
 			}
-
-		}
-		
-		
+		}		
 		newBalance = previousBalance - totalCredits + totalCharges + MI
 				* (previousBalance - totalCredits);
 		
 		totalDue = MP * newBalance;
 		
-		StringBuilder monthlybillBuilder = new StringBuilder();
-		
-		System.out.println("Current Balance is " + newBalance);
-		System.out.println("Previous Balance for this month is "
-				+ previousBalance);
-		System.out.println("Total Charges for this month " + totalCharges);
-		System.out.println("Total Payment for this month " + totalCredits);
-		System.out.println("Total Due remaining " + totalDue);
-		
+		StringBuilder monthlybillBuilder = new StringBuilder();		
 		monthlybillBuilder.append("Current Balance is " + newBalance);
 		monthlybillBuilder.append("Previous Balance for this month is "
 				+ previousBalance);
 		monthlybillBuilder.append("Total Charges for this month " + totalCharges);
 		monthlybillBuilder.append("Total Payment for this month " + totalCredits);
 		monthlybillBuilder.append("Total Due remaining " + totalDue);
-		
-		
-		
 		return monthlybillBuilder;
-
 	}
 
 	public static double getMI() {

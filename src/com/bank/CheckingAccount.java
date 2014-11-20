@@ -18,7 +18,6 @@ public class CheckingAccount extends Account {
 	public void setInterestRate(double interestRate) {
 		super.setInterestRate(interestRate);
 	}
-
 	public Vector getVector() {
 		this.vector = new Vector();
 		this.vector.add(this.accountNumber);

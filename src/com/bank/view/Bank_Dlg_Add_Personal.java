@@ -1,10 +1,9 @@
 package com.bank.view;
 
-import java.awt.Button;
 import java.awt.Container;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
+import javax.swing.ButtonModel;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -12,12 +11,10 @@ import javax.swing.JTextField;
 import com.bank.Utils;
 import com.financial.customers.Address;
 import com.financial.customers.ICustomer;
-import com.financial.customers.Person;
 import com.financial.factories.IFinancialFactory;
 import com.financial.utilities.CommonResources;
 import com.financial.view.AbstractFrm;
 import com.financial.view.Dialog_AddAccount;
-import com.sun.org.apache.bcel.internal.generic.IUSHR;
 
 public class Bank_Dlg_Add_Personal extends Dialog_AddAccount {
 
@@ -64,16 +61,16 @@ public class Bank_Dlg_Add_Personal extends Dialog_AddAccount {
 
 		ICustomer customer = financialFactory
 				.createCustomer(CommonResources.CUSTORMER_PERSON);
-		
-		
-		
-		
-		if (JRadioButton_Chk.isSelected()) {
+		ButtonModel b = buttonGroup.getSelection();
+		String name = b.getActionCommand();
+		if (name.equals(Utils.ACCOUNT_TYPE_CHECKING)) {
 			account = financialFactory
 					.createAccount(Utils.ACCOUNT_TYPE_CHECKING);
 			System.out.println("checking selected");
-		} else
+		} else{
 			account = financialFactory.createAccount(Utils.ACCOUNT_TYPE_SAVING);
+		}
+			
 		account.setAccountHolder(customer);
 		account.getAccountHolder().setName(txtName.getText());
 		Address address = new Address(txtStreet.getText(), txtCity.getText(),

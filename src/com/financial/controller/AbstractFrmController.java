@@ -61,5 +61,4 @@ public abstract class AbstractFrmController implements IFrmController {
 	public void setFinancialFactory(IFinancialFactory factory){
 		this.financialFactory= factory;
 	}
-
 }

@@ -11,10 +11,9 @@ public class Bronze extends CreditCardAccount {
 		super(initialBalance, accounType);
 		super.setMI(0.10);
 		super.setMP(0.14);
-		
 	}
-	
-	public  void setAccountType(String accountType){
+
+	public void setAccountType(String accountType) {
 		super.setAccountType(accountType);
 	}
 
@@ -27,7 +26,7 @@ public class Bronze extends CreditCardAccount {
 			if (this.getBalance() < 0) {
 				super.sendEmail(entry, "Balance is negative");
 				return "Balance is negative";
-			} 
+			}
 			if (entry.getEntryInfo().equals(CommonResources.TEXT_WITHDRAW)
 					&& entry.getAmount() > 400) {
 				super.sendEmail(entry, "Withdraw is larger than $400");

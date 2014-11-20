@@ -35,5 +35,4 @@ public class Person extends Customer implements IPerson {
 		// TODO Auto-generated method stub
 		
 	}
-
 }

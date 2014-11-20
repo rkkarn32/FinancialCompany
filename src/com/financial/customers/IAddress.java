@@ -7,6 +7,4 @@ public interface IAddress {
 	public String getCity() ;
 	public String getState();
 	public int getZip();
-	
-
 }

@@ -7,7 +7,6 @@ import javax.swing.UIManager;
 import com.bank.controller.BankFrmController;
 import com.bank.view.BankFrm;
 import com.financial.account.AccountManager;
-import com.financial.account.CalculateInterestFunctor;
 import com.financial.application.FinCo;
 import com.financial.customers.Address;
 import com.financial.customers.IAddress;
@@ -21,7 +20,6 @@ import com.financial.transaction.Deposite;
 import com.financial.transaction.TransactionManager;
 import com.financial.transaction.Withdraw;
 import com.financial.utilities.CommonResources;
-
 
 public class Bank {
 
@@ -72,6 +70,5 @@ public class Bank {
 			//mainView.setVisible(true);
 		
 		//new implementation for bank
-		
 	}
 }

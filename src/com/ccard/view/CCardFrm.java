@@ -12,41 +12,29 @@ public class CCardFrm extends DefaultFrm{
 	private JButton buttonGenerateBill;// = new JButton();
 	private List<JButton> buttonList;
 	
-
 	public CCardFrm(String title) {
 		super(title);
-		
 	}
-	
 
 	public JButton getButtonGenerateBill() {
 		return buttonGenerateBill;
 	}
 
-
 	public void setButtonGenerateBill(JButton buttonGenerateBill) {
 		this.buttonGenerateBill = buttonGenerateBill;
 	}
-
-
 	/**
 	 * 
 	 */
 	
-	
 	@Override
 	public List<JButton> getButtons() {
 		
-		buttonList = new ArrayList<JButton>();
-		
-		
+		buttonList         = new ArrayList<JButton>();	
 		buttonGenerateBill = new JButton();
-		
 		buttonGenerateBill.setText("Deposit");
 		buttonGenerateBill.setBounds(468,104,96,33);
 		buttonList.add(buttonGenerateBill);
-		
-		
 		return buttonList;
 		
 	}
@@ -70,5 +58,4 @@ public class CCardFrm extends DefaultFrm{
 		
 		return model;
 	}
-
 }

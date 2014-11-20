@@ -26,10 +26,8 @@ import com.financial.transaction.Withdraw;
 import com.financial.utilities.CommonResources;
 
 public class CCard {
-	
-	public static void main(String args[]) {
 
-		System.out.println("CCard main :: ");
+	public static void main(String args[]) {
 		FinCo.main(null);
 
 		ICustomer personalCustomer = new Person();
@@ -41,40 +39,41 @@ public class CCard {
 		personalCustomer.setEmail("koirala.rachana@gmail.com");
 		personalCustomer.setType(CommonResources.CUSTORMER_PERSON);
 
-		IAccount goldAccount = new Gold(100,CreditCardCommonResources.CUSTORMER_GOLD);
+		IAccount goldAccount = new Gold(100,
+				CreditCardCommonResources.CUSTORMER_GOLD);
 		goldAccount.setAccountHolder(personalCustomer);
 
 		AccountManager accountManager = new AccountManager();
 		accountManager.addAccount(goldAccount);
 
 		ITransactionManager transactionManager = new TransactionManager();
-		
+
 		ITransaction deposit = new Deposite(goldAccount, 1000);
 		transactionManager.performOperation(deposit);
-		
+
 		ITransaction withdraw = new Withdraw(goldAccount, 200);
 		transactionManager.performOperation(withdraw);
-		
+
 		System.out.println(goldAccount.generateReport());
-		
+
 		try {
-		    // Add the following code if you want the Look and Feel
-		    // to be set to the Look and Feel of the native system.
-			
-		    try {
-		        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		    } 
-		    catch (Exception e) { 
-		    }
-		    CCFactory creditFactory             = new CCFactory();
-		    CCardFrm ccardFrame                 = new CCardFrm("CCard View");
-			CCardFrmController creditController = new CCardFrmController(accountManager.getDaoAccount().getAll(), ccardFrame);
+			// Add the following code if you want the Look and Feel
+			// to be set to the Look and Feel of the native system.
+
+			try {
+				UIManager.setLookAndFeel(UIManager
+						.getSystemLookAndFeelClassName());
+			} catch (Exception e) {
+			}
+			CCFactory creditFactory = new CCFactory();
+			CCardFrm ccardFrame = new CCardFrm("CCard View");
+			CCardFrmController creditController = new CCardFrmController(
+					accountManager.getDaoAccount().getAll(), ccardFrame);
 			creditController.setFinancialFactory(creditFactory);
 			FinCo.setController(creditController);
 			FinCo.main(null);
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
-
 }

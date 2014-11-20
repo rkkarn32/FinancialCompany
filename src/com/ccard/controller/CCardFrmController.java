@@ -44,13 +44,10 @@ public class CCardFrmController extends DefaultFrmController {
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == myCCardView.getButtonGenerateBill())
 				buttonNewButton_ActionPerformed(e);
-			
-			
 		}
 	}
 	
 	private void buttonNewButton_ActionPerformed(ActionEvent event){
 		System.out.println("New Button is clicked");
 	}
-
 }

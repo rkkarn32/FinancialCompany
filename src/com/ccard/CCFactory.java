@@ -20,6 +20,5 @@ public class CCFactory extends FinancialFactory {
 		if (accountString.equals(CreditCardCommonResources.CUSTORMER_GOLD))
 			return new Gold(1245, CreditCardCommonResources.CUSTORMER_GOLD);
 		return null;
-
 	}
 }

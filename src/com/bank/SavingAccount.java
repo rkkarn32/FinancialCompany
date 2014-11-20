@@ -13,7 +13,6 @@ public class SavingAccount extends Account{
 		super(initialBalance, accountType);
 		setInterestRate(7.1);
 	}
-
 	@Override
 	public void setInterestRate(double interestRate) {
 		super.setInterestRate(interestRate);

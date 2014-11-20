@@ -6,8 +6,6 @@ import com.financial.customers.Person;
 import com.financial.utilities.CommonResources;
 
 public class Gold extends CreditCardAccount {
-	
-	
 	public Gold(double initialBalance, String accountType) {
 		super(initialBalance, accountType);
 		super.setMI(0.06);

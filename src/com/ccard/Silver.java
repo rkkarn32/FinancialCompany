@@ -11,7 +11,6 @@ public class Silver extends CreditCardAccount{
 		super(initialBalance, accountType);
 		super.setMI(0.08);
 		super.setMP(0.12);
-	
 	}
 	@Override
 	public String hasToSendMail(Entry entry) {

@@ -104,7 +104,6 @@ public abstract class Customer implements ICustomer {
 			System.out.println(a.getBalance());
 			System.out.println(a.getAccountHolder());
 		}
-
 	}
 
 	@Override
@@ -115,12 +114,10 @@ public abstract class Customer implements ICustomer {
 	@Override
 	public void removeAccount(IAccount account) {
 		this.accountList.remove(account);
-
 	}
 
 	@Override
 	public void update() {
 
 	}
-
 }

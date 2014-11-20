@@ -3,6 +3,7 @@ package com.bank.view;
 import java.awt.Container;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -56,12 +57,13 @@ public class Bank_Dlg_Add_Company extends Dialog_AddAccount{
 		JTextField_NumberEmp.setBounds(120,216,156,20);
 	}
 	
-	
 	@Override
 	public void doFurtherWorks(){
 		
 		ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_COMPANY);
-		if(JRadioButton_Chk.isSelected())
+		ButtonModel b = buttonGroup.getSelection();
+		String name = b.getActionCommand();
+		if (name.equals(Utils.ACCOUNT_TYPE_CHECKING)) 
 			account = financialFactory.createAccount(Utils.ACCOUNT_TYPE_CHECKING);
 		else
 			account = financialFactory.createAccount(Utils.ACCOUNT_TYPE_SAVING);
@@ -81,7 +83,6 @@ public class Bank_Dlg_Add_Company extends Dialog_AddAccount{
 	JLabel JLabel6 = new JLabel();
 	JLabel JLabel8 = new JLabel();
 	ButtonGroup buttonGroup;
-	
 	
 	JLabel jLabel9 = new JLabel();
 	javax.swing.JTextField JTextField_NumberEmp = new javax.swing.JTextField();

@@ -19,7 +19,6 @@ public class Company extends Customer implements ICompany {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
 	public int getNumofEmp() {
 		return numofEmp;
 	}
@@ -38,6 +37,4 @@ public class Company extends Customer implements ICompany {
 	public void setDateofbirth(Date dateofbirth) {
 		
 	}
-	
-
 }

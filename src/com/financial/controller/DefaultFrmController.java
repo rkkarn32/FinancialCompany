@@ -35,14 +35,11 @@ public class DefaultFrmController extends AbstractFrmController{
 		myView = view;
 		addActionListenerToView();
 	}
-	
-	
 	@Override
 	public void setView(AbstractFrm view) {
 		super.setView(view);
 		this.myView= (DefaultFrm)view;
 	}
-	
 	
 	@Override
 	public void addActionListenerToView() {
@@ -140,7 +137,4 @@ public class DefaultFrmController extends AbstractFrmController{
 	public void buttonExit_ActionPerformed(ActionEvent event){
 		System.exit(1);
 	}
-	
-	
-	
 }

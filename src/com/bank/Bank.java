@@ -50,13 +50,6 @@ public class Bank {
 		ITransaction withdraw = new Withdraw(savingAccount, 450);
 		transactionManager.performOperation(withdraw);
 		
-		System.out.println(savingAccount.generateReport());
-		
-		accountManager.addInterest(new CalculateInterestFunctor());
-		
-		System.out.println(savingAccount.generateReport());
-		
-		
 		try {
 		    // Add the following code if you want the Look and Feel
 		    // to be set to the Look and Feel of the native system.

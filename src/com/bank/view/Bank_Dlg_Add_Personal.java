@@ -79,6 +79,7 @@ public class Bank_Dlg_Add_Personal extends Dialog_AddAccount {
 		Address address = new Address(txtStreet.getText(), txtCity.getText(),
 				txtCity.getText(), Integer.parseInt(txtZip.getText()));
 		account.getAccountHolder().setAddress(address);
+		account.getAccountHolder().setEmail(txtEmail.getText());
 	}
 
 	/**

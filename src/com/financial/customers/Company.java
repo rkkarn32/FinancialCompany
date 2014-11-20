@@ -36,7 +36,6 @@ public class Company extends Customer implements ICompany {
 
 	@Override
 	public void setDateofbirth(Date dateofbirth) {
-		// TODO Auto-generated method stub
 		
 	}
 	

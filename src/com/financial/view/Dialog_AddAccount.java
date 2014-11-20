@@ -145,6 +145,7 @@ public class Dialog_AddAccount extends JDialog {
 		account.getAccountHolder().setName(txtName.getText());
 		Address address = new Address(txtStreet.getText(), txtCity.getText(), txtCity.getText(), Integer.parseInt(txtZip.getText()));
 		account.getAccountHolder().setAddress(address);
+		account.getAccountHolder().setEmail(txtEmail.getText());
 	}
 
 	void buttonOK_actionPerformed(java.awt.event.ActionEvent event) {

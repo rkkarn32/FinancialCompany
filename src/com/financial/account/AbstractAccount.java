@@ -23,8 +23,9 @@ public abstract class AbstractAccount implements IAccount {
 	private static int counter = 1000;
 
 	public AbstractAccount(double initialBalance, String accountType) {
-		this.accountType   = accountType;
-		this.accountNumber = counter + CommonResources.splitString(this.accountType);
+		this.accountType = accountType;
+		this.accountNumber = counter
+				+ CommonResources.splitString(this.accountType);
 		this.totalBalance = initialBalance;
 		this.entryList = new ArrayList<Entry>();
 		this.vector = new Vector<>();
@@ -59,8 +60,10 @@ public abstract class AbstractAccount implements IAccount {
 	}
 
 	public void sendEmail(Entry entry, String subject) {
-		CommonResources.sendMail(this.accountHolder.getEmail(),
-				entry.toString(), subject);
+		if (this.accountHolder.getEmail() != null) {
+			CommonResources.sendMail(this.accountHolder.getEmail(),
+					entry.toString(), subject);
+		}
 	}
 
 	public StringBuilder generateReport() {
@@ -107,15 +110,15 @@ public abstract class AbstractAccount implements IAccount {
 		return this.vector;
 	}
 
-//	public String hasToSendMail(Entry entry) {
-//
-//		String message = hasToSendMail(entry);
-//
-//		if (message != null) {
-//			sendEmail(entry, message);
-//		}
-//		return hasToSendMail(entry);
-//	}
+	// public String hasToSendMail(Entry entry) {
+	//
+	// String message = hasToSendMail(entry);
+	//
+	// if (message != null) {
+	// sendEmail(entry, message);
+	// }
+	// return hasToSendMail(entry);
+	// }
 
 	public String getAccountNumber() {
 		return accountNumber;

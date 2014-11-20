@@ -29,14 +29,18 @@ public class CCardFrm extends DefaultFrm{
 	
 	@Override
 	public List<JButton> getButtons() {
+		List<JButton> bList = super.getButtons();
+		buttonList         = new ArrayList<JButton>();
 		
-		buttonList         = new ArrayList<JButton>();	
+		getButtonReport().setText("Generate bill");
+		
 		buttonGenerateBill = new JButton();
 		buttonGenerateBill.setText("Deposit");
 		buttonGenerateBill.setBounds(468,104,96,33);
-		buttonList.add(buttonGenerateBill);
-		return buttonList;
 		
+		buttonList.add(buttonGenerateBill);
+		buttonList.addAll(bList);
+		return buttonList;
 	}
 	
 	@Override

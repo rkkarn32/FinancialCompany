@@ -143,6 +143,7 @@ public class DefaultFrmController extends AbstractFrmController{
 			IAccount account = accountManager.getAccountByAccountNumber(accNum);
 			//System.out.println(account.generateReport());
 			Dialog_Report dlgReport = new Dialog_Report(myView, account.generateReport());
+			dlgReport.setTitle("Report view");
 			dlgReport.setVisible(true);
 			
 		}

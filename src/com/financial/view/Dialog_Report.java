@@ -1,20 +1,16 @@
 package com.financial.view;
 
-import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
 public class Dialog_Report extends JDialog{
 	
 	protected JButton buttonOk;
-	protected JButton buttonCancel;
 	protected JLabel labelShow;
 	protected JScrollPane scrollPane;
 	
@@ -22,9 +18,10 @@ public class Dialog_Report extends JDialog{
 		super(parent);
 		setSize(405,370 );
 		buttonOk = new JButton();
-		buttonCancel = new JButton();
 		labelShow = new JLabel();
 		scrollPane = new JScrollPane();
+		
+		getContentPane().setLayout(null);
 		
 		scrollPane.setBounds(24,24,358,240);
 		getContentPane().add(scrollPane);

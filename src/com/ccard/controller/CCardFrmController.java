@@ -6,12 +6,14 @@ import java.util.List;
 
 import javax.swing.JButton;
 
+import com.ccard.CreditCardAccount;
 import com.ccard.view.CCardFrm;
 import com.financial.controller.DefaultFrmController;
 import com.financial.controller.DefaultFrmController.ButtonListener;
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
 import com.financial.view.DefaultFrm;
+import com.financial.view.Dialog_Report;
 
 public class CCardFrmController extends DefaultFrmController {
 	private final ButtonListener listener = new ButtonListener();
@@ -31,7 +33,6 @@ public class CCardFrmController extends DefaultFrmController {
 	
 	@Override
 	public void addActionListenerToView() {
-		//view.getButtonAddAccount().addActionListener(listener);
 		for (JButton button: view.getButtonList()) {
 			button.addActionListener(listener);
 			System.out.println();
@@ -42,12 +43,35 @@ public class CCardFrmController extends DefaultFrmController {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if(e.getSource() == myCCardView.getButtonGenerateBill())
-				buttonNewButton_ActionPerformed(e);
+			if(e.getSource() == myCCardView.getButtonAddAccount())
+				buttonPersonalAddAccount_ActionPerformed(e);
+		else if(e.getSource() == myCCardView.getButtonAddInterest())
+			buttonAddInterest_ActionPerformed(e);
+		else if (e.getSource() == myCCardView.getButtonDeposite())
+			buttonDeposite_ActionPerfomed(e);
+		else if(e.getSource() == myCCardView.getButtonWithDraw())
+			buttonWithdraw_ActionPerformed(e);
+		else if(e.getSource() == myCCardView .getButtonExit())
+			buttonExit_ActionPerformed(e);
+		else if ( e.getSource() == myCCardView.getButtonReport())
+			buttonReport_ActionPerfomed(e);
 		}
 	}
 	
-	private void buttonNewButton_ActionPerformed(ActionEvent event){
-		System.out.println("New Button is clicked");
+	@Override
+	public void buttonReport_ActionPerfomed(ActionEvent event ){
+		System.out.println("Report is printing");
+		int num = myCCardView.getTable().getSelectionModel().getMinSelectionIndex();
+		if(num>=0)
+		{
+			String accNum = (String) model.getValueAt(num, 0);
+			IAccount account = accountManager.getAccountByAccountNumber(accNum);
+			CreditCardAccount cAccount = (CreditCardAccount) account;
+			//System.out.println(account.generateReport());
+			Dialog_Report dlgReport = new Dialog_Report(myCCardView, cAccount.generateMonthlyBills());
+			dlgReport.setTitle("Report view");
+			dlgReport.setVisible(true);
+			
+		}
 	}
 }

@@ -1,4 +1,4 @@
-package com.bank;
+package com.bank.account;
 
 import java.util.Vector;
 
@@ -8,16 +8,16 @@ import com.financial.customers.Company;
 import com.financial.customers.Person;
 import com.financial.utilities.CommonResources;
 
-public class SavingAccount extends Account{
-	public SavingAccount(double initialBalance, String accountType) {
+public class CheckingAccount extends Account {
+
+	public CheckingAccount(double initialBalance, String accountType) {
 		super(initialBalance, accountType);
-		setInterestRate(7.1);
+		setInterestRate(5.1);
 	}
 	@Override
 	public void setInterestRate(double interestRate) {
 		super.setInterestRate(interestRate);
 	}
-
 	public Vector getVector() {
 		this.vector = new Vector();
 		this.vector.add(this.accountNumber);
@@ -28,6 +28,7 @@ public class SavingAccount extends Account{
 		this.vector.add(this.totalBalance);
 		return this.vector;
 	}
+	
 	public String hasToSendMail(Entry entry) {
 		if (this.getAccountHolder() instanceof Company) {
 			super.sendEmail(entry, "Transaction Done");

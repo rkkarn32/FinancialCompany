@@ -106,7 +106,7 @@ public class DefaultFrmController extends AbstractFrmController{
 			dlgDeposite.setVisible(true);
 			deposite.setAccount(acc);
 			deposite.setAmount(dlgDeposite.getRetVal());
-			deposite.transact();
+			transactionManager.performOperation(deposite);
 			updateView();
 			
 		}			
@@ -127,7 +127,7 @@ public class DefaultFrmController extends AbstractFrmController{
 			dlgDeposite.setVisible(true);
 			withDraw.setAccount(acc);
 			withDraw.setAmount(dlgDeposite.getRetVal());
-			withDraw.transact();
+			transactionManager.performOperation(withDraw);
 			updateView();
 		}			
 		}

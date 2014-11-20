@@ -1,5 +1,8 @@
-package com.bank;
+package com.bank.factories;
 
+import com.bank.Utils;
+import com.bank.account.CheckingAccount;
+import com.bank.account.SavingAccount;
 import com.financial.factories.FinancialFactory;
 import com.financial.interfaces.IAccount;
 

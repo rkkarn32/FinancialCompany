@@ -8,6 +8,7 @@ import com.financial.account.AccountManager;
 import com.financial.factories.IFinancialFactory;
 import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
+import com.financial.interfaces.ITransactionManager;
 import com.financial.view.AbstractFrm;
 
 public abstract class AbstractFrmController implements IFrmController {
@@ -17,9 +18,12 @@ public abstract class AbstractFrmController implements IFrmController {
 	protected AbstractFrm view;
 	protected  List<IAccount> accountList;
 	protected IFinancialFactory financialFactory;
+	protected ITransactionManager transactionManager;
+	
 	public AbstractFrmController(List<IAccount> accountList, AbstractFrm view) {
 		super();
 		accountManager = SingletonFactory.getAccountManager();
+		transactionManager = SingletonFactory.getTransactionManager();
 		this.accountList = accountList;
 		this.view = view;
 		if(accountList != null)

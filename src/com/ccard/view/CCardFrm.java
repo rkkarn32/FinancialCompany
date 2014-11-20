@@ -47,9 +47,7 @@ public class CCardFrm extends DefaultFrm{
 	
 	@Override
 	public List<JButton> getButtonList() {
-		// TODO Auto-generated method stub
-		super.getButtonList().addAll(this.buttonList);
-		return super.getButtonList();
+		return buttonList;
 	}
 	
 	@Override

@@ -4,18 +4,15 @@ import java.util.ArrayList;
 
 import javax.swing.UIManager;
 
-import com.financial.controller.AbstractFrmController;
 import com.financial.controller.DefaultFrmController;
 import com.financial.controller.IFrmController;
 import com.financial.factories.FinancialFactory;
 import com.financial.factories.IFinancialFactory;
 import com.financial.interfaces.IAccount;
-import com.financial.view.AbstractFrm;
 import com.financial.view.DefaultFrm;
 
 public class FinCo {
 	
-	private static AbstractFrm mainView ;
 	private static IFrmController controller;
 	//private static IFinancialFactory factory;
 	
@@ -54,12 +51,7 @@ public class FinCo {
 			System.exit(1);
 		}
 	}
-	public static AbstractFrm getMainView() {
-		return mainView;
-	}
-	public void setMainView(AbstractFrm mainView) {
-		this.mainView = mainView;
-	}
+	
 	public static IFrmController getController() {
 		return controller;
 	}

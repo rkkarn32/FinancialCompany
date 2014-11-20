@@ -18,12 +18,13 @@ public class DefaultFrm extends AbstractFrm {
 	protected JButton buttonAddInterest;//= new JButton();
 	protected JButton buttonExit;
 	protected JButton buttonAddAccount;
+	protected JButton buttonReport;
 	
 	private List <JButton> buttonList;
 	
 	public DefaultFrm(String title) {
 		super(title);
-		setSize(600, 310);
+		setSize(620, 310);
 		
 	}
 
@@ -37,27 +38,31 @@ public class DefaultFrm extends AbstractFrm {
 		buttonAddInterest= new JButton();
 		buttonExit = new JButton();
 		buttonAddAccount = new JButton();
+		buttonReport = new JButton();
 		
-		buttonDeposite.setText("Deposit");
-		buttonDeposite.setBounds(468,104,96,33);
-		buttonList.add(buttonDeposite);
+		buttonAddAccount.setText("Add Account");
+		buttonAddAccount.setBounds(20,20,120,33);
+		buttonList.add(buttonAddAccount);
 		
-		buttonWithDraw.setText("Withdraw");
-		buttonWithDraw.setBounds(468,164,96,33);
-		buttonList.add(buttonWithDraw);
-		
-		buttonAddInterest.setBounds(468,20,106,33);
+		buttonAddInterest.setBounds(468,20,120,33);
 		buttonAddInterest.setText("Add interest");
 		buttonList.add(buttonAddInterest);
 		
-		buttonExit.setText("Exit");
-		buttonExit.setBounds(468, 248,96,31);
-		buttonList.add(buttonExit);
+		buttonDeposite.setText("Deposit");
+		buttonDeposite.setBounds(468,60,120,33);
+		buttonList.add(buttonDeposite);
 		
-
-		buttonAddAccount.setText("Add Account");
-		buttonAddAccount.setBounds(50,20,192,33);
-		buttonList.add(buttonAddAccount);
+		buttonWithDraw.setText("Withdraw");
+		buttonWithDraw.setBounds(468,100,120,33);
+		buttonList.add(buttonWithDraw);
+		
+		buttonReport.setText("ShowReport");
+		buttonReport.setBounds(468, 140, 120, 33);
+		buttonList.add(buttonReport);
+		
+		buttonExit.setText("Exit");
+		buttonExit.setBounds(468, 248,120,31);
+		buttonList.add(buttonExit);
 		
 		return buttonList;
 	}
@@ -98,5 +103,8 @@ public class DefaultFrm extends AbstractFrm {
 
 	public JButton getButtonAddAccount() {
 		return buttonAddAccount;
+	}
+	public JButton getButtonReport(){
+		return buttonReport;
 	}
 }

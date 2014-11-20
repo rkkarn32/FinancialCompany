@@ -22,6 +22,7 @@ import com.financial.view.AbstractFrm;
 import com.financial.view.DefaultFrm;
 import com.financial.view.Dialog_AddAccount;
 import com.financial.view.Dialog_Deposit;
+import com.financial.view.Dialog_Report;
 
 public class DefaultFrmController extends AbstractFrmController{
 	
@@ -64,6 +65,8 @@ public class DefaultFrmController extends AbstractFrmController{
 				buttonWithdraw_ActionPerformed(e);
 			else if(e.getSource() == myView .getButtonExit())
 				buttonExit_ActionPerformed(e);
+			else if ( e.getSource() == myView.getButtonReport())
+				buttonReport_ActionPerfomed(e);
 		}
 	}
 	
@@ -126,10 +129,23 @@ public class DefaultFrmController extends AbstractFrmController{
 			withDraw.setAmount(dlgDeposite.getRetVal());
 			withDraw.transact();
 			updateView();
-			
 		}			
 		}
 		System.out.println("Deposite is clicked");
+	}
+	
+	public void buttonReport_ActionPerfomed(ActionEvent event){
+		System.out.println("Report is printing");
+		int num = myView.getTable().getSelectionModel().getMinSelectionIndex();
+		if(num>=0)
+		{
+			String accNum = (String) model.getValueAt(num, 0);
+			IAccount account = accountManager.getAccountByAccountNumber(accNum);
+			//System.out.println(account.generateReport());
+			Dialog_Report dlgReport = new Dialog_Report(myView, account.generateReport());
+			dlgReport.setVisible(true);
+			
+		}
 	}
 	public void buttonGenerateReport_ActionPerformed(ActionEvent event){
 		System.out.println("Report:");

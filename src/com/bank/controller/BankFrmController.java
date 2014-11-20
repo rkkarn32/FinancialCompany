@@ -62,6 +62,8 @@ public class BankFrmController extends DefaultFrmController {
 				buttonExit_ActionPerformed(e);
 			else if (e.getSource() == myBankView.getButtonCompanyAccount())
 				buttonCompAcc_ActionPerformed(e);
+			else if ( e.getSource() == myBankView.getButtonReport())
+				buttonReport_ActionPerfomed(e);
 		}
 	}
 

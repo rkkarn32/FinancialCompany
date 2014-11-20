@@ -13,11 +13,13 @@ import com.financial.view.AbstractFrm;
 public abstract class AbstractFrmController implements IFrmController {
 	
 	protected DefaultTableModel model= new DefaultTableModel();
+	protected AccountManager accountManager;
 	protected AbstractFrm view;
 	protected  List<IAccount> accountList;
 	protected IFinancialFactory financialFactory;
 	public AbstractFrmController(List<IAccount> accountList, AbstractFrm view) {
 		super();
+		accountManager = SingletonFactory.getAccountManager();
 		this.accountList = accountList;
 		this.view = view;
 		if(accountList != null)

@@ -9,6 +9,7 @@ import com.bank.account.SavingAccount;
 import com.bank.controller.BankFrmController;
 import com.bank.factories.BankFactory;
 import com.bank.view.BankFrm;
+import com.ccard.account.Gold;
 import com.ccard.controller.CCardFrmController;
 import com.ccard.factories.CCFactory;
 import com.ccard.view.CCardFrm;

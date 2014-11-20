@@ -41,7 +41,7 @@ public class DefaultFrm extends AbstractFrm {
 		buttonReport = new JButton();
 		
 		buttonAddAccount.setText("Add Account");
-		buttonAddAccount.setBounds(20,20,120,33);
+		buttonAddAccount.setBounds(20,20,150,33);
 		buttonList.add(buttonAddAccount);
 		
 		buttonAddInterest.setBounds(468,20,120,33);

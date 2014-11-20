@@ -51,7 +51,7 @@ public class DefaultFrmController extends AbstractFrmController{
 		}
 	}
 	
-	public class ButtonListener implements ActionListener{
+	private class ButtonListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {

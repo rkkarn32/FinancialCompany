@@ -34,8 +34,9 @@ public class BankFrm extends DefaultFrm {
 		buttonList = new ArrayList<JButton>();
 		buttonCompanyAccount = new JButton();
 		
+		getButtonAddAccount().setText("My Add");
 		buttonCompanyAccount.setText("Add Company Account");
-		buttonCompanyAccount.setBounds(240,20,192,33);
+		buttonCompanyAccount.setBounds(240,20,150,33);
 		buttonList.add(buttonCompanyAccount);
 		//btnList.addAll(buttonList);
 		buttonList.addAll(btnList);

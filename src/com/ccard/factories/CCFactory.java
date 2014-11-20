@@ -1,9 +1,9 @@
 package com.ccard.factories;
 
-import com.ccard.Bronze;
 import com.ccard.CreditCardCommonResources;
-import com.ccard.Gold;
-import com.ccard.Silver;
+import com.ccard.account.Bronze;
+import com.ccard.account.Gold;
+import com.ccard.account.Silver;
 import com.financial.account.Account;
 import com.financial.factories.FinancialFactory;
 import com.financial.factories.SimpleAccountFactory;

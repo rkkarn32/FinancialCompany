@@ -1,4 +1,4 @@
-package com.ccard;
+package com.ccard.account;
 
 import com.financial.account.Entry;
 import com.financial.customers.Company;

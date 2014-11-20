@@ -24,7 +24,7 @@ public class DefaultFrm extends AbstractFrm {
 	
 	public DefaultFrm(String title) {
 		super(title);
-		setSize(620, 310);
+		setSize(620, 350);
 		
 	}
 

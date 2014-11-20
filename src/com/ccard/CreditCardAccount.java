@@ -46,6 +46,7 @@ public abstract class CreditCardAccount extends AbstractAccount {
 	}
 
 	public Vector getVector() {
+		returnVector = new Vector();
 		returnVector.add(super.getAccountHolder().getName());
 		returnVector.add(super.getAccountNumber());
 		returnVector.add(expDate);

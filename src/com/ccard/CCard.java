@@ -29,7 +29,7 @@ import com.financial.utilities.CommonResources;
 public class CCard {
 
 	public static void main(String args[]) {
-		FinCo.main(null);
+		//FinCo.main(null);
 
 		ICustomer personalCustomer = new Person();
 		IAddress address = new Address("1000N fourth street", "Fairfield",

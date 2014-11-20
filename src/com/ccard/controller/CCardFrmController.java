@@ -18,15 +18,15 @@ public class CCardFrmController extends DefaultFrmController {
 	
 	private CCardFrm myCCardView;
 
-	public CCardFrmController(List<IAccount> accountList, DefaultFrm view) {
+	public CCardFrmController(List<IAccount> accountList, CCardFrm view) {
 		super(accountList, view);
-		// TODO Auto-generated constructor stub
+//		view.getButtonAddAccount().setText("Add Credit Card");
 	}
 	
 	@Override
 	public void setView(AbstractFrm view) {
 		super.setView(view);
-		this.myCCardView= (CCardFrm)view;
+		this.myCCardView= (CCardFrm) view;
 	}
 	
 	@Override

@@ -36,6 +36,8 @@ public class CCardFrm extends DefaultFrm{
 		buttonAddAccount.setText("Add Personal Card");
 		getButtonReport().setText("Generate bill");
 		
+		bList.remove(getButtonAddInterest());
+		
 //		buttonGenerateBill = new JButton();
 //		buttonGenerateBill.setText("Deposit");
 //		buttonGenerateBill.setBounds(468,104,96,33);

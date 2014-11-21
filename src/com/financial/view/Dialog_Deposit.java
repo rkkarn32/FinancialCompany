@@ -26,7 +26,7 @@ public class Dialog_Deposit extends JDialog{
 		setTitle("Deposit");
 		setModal(true);
 		getContentPane().setLayout(null);
-		setSize(268,126);
+		setSize(268,150);
 		setVisible(false);
 		JLabel1.setText("Acc Nr");
 		getContentPane().add(JLabel1);

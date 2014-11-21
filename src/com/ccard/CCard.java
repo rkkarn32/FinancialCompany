@@ -19,6 +19,7 @@ import com.financial.customers.Address;
 import com.financial.customers.IAddress;
 import com.financial.customers.ICustomer;
 import com.financial.customers.Person;
+import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
 import com.financial.interfaces.ITransaction;
 import com.financial.interfaces.ITransactionManager;
@@ -45,10 +46,10 @@ public class CCard {
 				CreditCardCommonResources.CREDITCARD_GOLD);
 		goldAccount.setAccountHolder(personalCustomer);
 
-		AccountManager accountManager = new AccountManager();
+		AccountManager accountManager = SingletonFactory.getAccountManager();
 		accountManager.addAccount(goldAccount);
 
-		ITransactionManager transactionManager = new TransactionManager();
+		ITransactionManager transactionManager = SingletonFactory.getTransactionManager();
 
 		ITransaction deposit = new Deposite(goldAccount, 1000);
 		transactionManager.performOperation(deposit);

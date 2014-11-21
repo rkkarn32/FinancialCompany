@@ -8,9 +8,13 @@ import javax.swing.JButton;
 
 import com.ccard.account.CreditCardAccount;
 import com.ccard.view.CCardFrm;
+import com.ccard.view.Dialog_AddCCard;
+import com.financial.account.AccountManager;
 import com.financial.controller.DefaultFrmController;
+import com.financial.factories.SingletonFactory;
 import com.financial.interfaces.IAccount;
 import com.financial.view.AbstractFrm;
+import com.financial.view.Dialog_AddAccount;
 import com.financial.view.Dialog_Report;
 
 public class CCardFrmController extends DefaultFrmController {
@@ -44,7 +48,7 @@ public class CCardFrmController extends DefaultFrmController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Action Liestened");
-			
+
 			if (e.getSource() == myCCardView.getButtonAddAccount())
 				buttonPersonalAddAccount_ActionPerformed(e);
 			else if (e.getSource() == myCCardView.getButtonAddInterest())
@@ -58,6 +62,22 @@ public class CCardFrmController extends DefaultFrmController {
 			else if (e.getSource() == myCCardView.getButtonReport())
 				buttonReport_ActionPerfomed(e);
 		}
+	}
+
+	@Override
+	public void buttonPersonalAddAccount_ActionPerformed(ActionEvent event) {
+
+		// ICustomer customer =
+		// financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
+		IAccount account;// =
+							// financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
+
+		// customer.addAccount(account);
+		Dialog_AddAccount dialogAdd = new Dialog_AddCCard("MyDialog", myCCardView ,financialFactory);
+		dialogAdd.setVisible(true);
+		accountManager.addAccount(dialogAdd.getAccount());
+		updateView();
+		System.out.println("Account should be added");
 	}
 
 	@Override

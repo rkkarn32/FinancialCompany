@@ -47,8 +47,8 @@ public abstract class CreditCardAccount extends AbstractAccount {
 
 	public Vector getVector() {
 		returnVector = new Vector();
-		returnVector.add(super.getAccountHolder().getName());
 		returnVector.add(super.getAccountNumber());
+		returnVector.add(super.getAccountHolder().getName());
 		returnVector.add(expDate);
 		returnVector.add(super.getAccountType());		
 		returnVector.add(super.getBalance());
@@ -100,7 +100,9 @@ public abstract class CreditCardAccount extends AbstractAccount {
 		monthlybillBuilder.append("Total Due remaining " + totalDue);
 		return monthlybillBuilder;
 	}
-
+	
+	
+	
 	public static double getMI() {
 		return MI;
 	}

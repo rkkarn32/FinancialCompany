@@ -33,7 +33,7 @@ public class CCardFrm extends DefaultFrm{
 		List<JButton> bList = super.getButtons();
 		cardButtonList         = new ArrayList<JButton>();
 		
-		buttonAddAccount.setText("Add Credit Card");
+		buttonAddAccount.setText("Add Personal Card");
 		getButtonReport().setText("Generate bill");
 		
 //		buttonGenerateBill = new JButton();
@@ -53,9 +53,8 @@ public class CCardFrm extends DefaultFrm{
 	@Override
 	public DefaultTableModel getModel() {
 		DefaultTableModel model = new DefaultTableModel();
-		
-		model.addColumn("Name");
 		model.addColumn("CC Number");
+		model.addColumn("Name");
 		model.addColumn("Exp Date");
 		model.addColumn("Type");
 		model.addColumn("Balance");

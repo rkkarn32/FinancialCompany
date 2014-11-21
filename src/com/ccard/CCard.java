@@ -42,7 +42,7 @@ public class CCard {
 		personalCustomer.setType(CommonResources.CUSTORMER_PERSON);
 
 		IAccount goldAccount = new Gold(100,
-				CreditCardCommonResources.CUSTORMER_GOLD);
+				CreditCardCommonResources.CREDITCARD_GOLD);
 		goldAccount.setAccountHolder(personalCustomer);
 
 		AccountManager accountManager = new AccountManager();

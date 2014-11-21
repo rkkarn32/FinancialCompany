@@ -19,10 +19,10 @@ public class CCFactory extends FinancialFactory {
 			return new Account(12, CommonResources.ACCOUNT_TYPE_DEFAULT);
 		if (accountString.equals(CreditCardCommonResources.CREDITCARD_BRONZE))
 			return new Bronze(1245, CreditCardCommonResources.CREDITCARD_BRONZE);
-		if (accountString.equals(CreditCardCommonResources.CUSTORMER_SILVER))
-			return new Silver(1245, CreditCardCommonResources.CUSTORMER_SILVER);
-		if (accountString.equals(CreditCardCommonResources.CUSTORMER_GOLD))
-			return new Gold(1245, CreditCardCommonResources.CUSTORMER_GOLD);
+		if (accountString.equals(CreditCardCommonResources.CREDITCARD_SILVER))
+			return new Silver(1245, CreditCardCommonResources.CREDITCARD_SILVER);
+		if (accountString.equals(CreditCardCommonResources.CREDITCARD_GOLD))
+			return new Gold(1245, CreditCardCommonResources.CREDITCARD_GOLD);
 		return null;
 	}
 }

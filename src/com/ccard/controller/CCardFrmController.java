@@ -18,14 +18,12 @@ import com.financial.view.Dialog_AddAccount;
 import com.financial.view.Dialog_Report;
 
 public class CCardFrmController extends DefaultFrmController {
-	private ButtonListener cardListener;
 
 	private CCardFrm myCCardView;
 
 	public CCardFrmController(List<IAccount> accountList, CCardFrm view) {
 		super(accountList, view);
 		myCCardView = view;
-		// view.getButtonAddAccount().setText("Add Credit Card");
 	}
 
 	@Override
@@ -36,43 +34,12 @@ public class CCardFrmController extends DefaultFrmController {
 
 	@Override
 	public void addActionListenerToView() {
-		cardListener = new ButtonListener();
-		for (JButton button : view.getButtonList()) {
-			button.addActionListener(cardListener);
-			System.out.println(button.getText());
-		}
-	}
-
-	private class ButtonListener implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Action Liestened");
-
-			if (e.getSource() == myCCardView.getButtonAddAccount())
-				buttonPersonalAddAccount_ActionPerformed(e);
-			else if (e.getSource() == myCCardView.getButtonAddInterest())
-				buttonAddInterest_ActionPerformed(e);
-			else if (e.getSource() == myCCardView.getButtonDeposite())
-				buttonDeposite_ActionPerfomed(e);
-			else if (e.getSource() == myCCardView.getButtonWithDraw())
-				buttonWithdraw_ActionPerformed(e);
-			else if (e.getSource() == myCCardView.getButtonExit())
-				buttonExit_ActionPerformed(e);
-			else if (e.getSource() == myCCardView.getButtonReport())
-				buttonReport_ActionPerfomed(e);
-		}
+		
+		super.addActionListenerToView();
 	}
 
 	@Override
 	public void buttonPersonalAddAccount_ActionPerformed(ActionEvent event) {
-
-		// ICustomer customer =
-		// financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
-		IAccount account;// =
-							// financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
-
-		// customer.addAccount(account);
 		Dialog_AddAccount dialogAdd = new Dialog_AddCCard("MyDialog", myCCardView ,financialFactory);
 		dialogAdd.setVisible(true);
 		accountManager.addAccount(dialogAdd.getAccount());

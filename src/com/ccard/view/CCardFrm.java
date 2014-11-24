@@ -9,19 +9,10 @@ import com.financial.view.DefaultFrm;
 
 public class CCardFrm extends DefaultFrm{
 	
-	private JButton buttonGenerateBill;// = new JButton();
 	private List<JButton> cardButtonList;
 	
 	public CCardFrm(String title) {
 		super(title);
-	}
-
-	public JButton getButtonGenerateBill() {
-		return buttonGenerateBill;
-	}
-
-	public void setButtonGenerateBill(JButton buttonGenerateBill) {
-		this.buttonGenerateBill = buttonGenerateBill;
 	}
 	/**
 	 * 
@@ -37,12 +28,6 @@ public class CCardFrm extends DefaultFrm{
 		getButtonReport().setText("Generate bill");
 		
 		bList.remove(getButtonAddInterest());
-		
-//		buttonGenerateBill = new JButton();
-//		buttonGenerateBill.setText("Deposit");
-//		buttonGenerateBill.setBounds(468,104,96,33);
-//		buttonList.add(buttonGenerateBill);
-		
 		cardButtonList.addAll(bList);
 		return cardButtonList;
 	}

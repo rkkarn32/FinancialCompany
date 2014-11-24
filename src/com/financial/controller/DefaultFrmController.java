@@ -27,7 +27,7 @@ import com.financial.view.Dialog_Report;
 public class DefaultFrmController extends AbstractFrmController{
 	
 	
-	private final ButtonListener listener = new ButtonListener();
+	private  ButtonListener listener;
 	private DefaultFrm myView ;
 	private List<JButton> buttonList = new ArrayList<JButton>();
 	
@@ -44,11 +44,14 @@ public class DefaultFrmController extends AbstractFrmController{
 	
 	@Override
 	public void addActionListenerToView() {
-		//view.getButtonAddAccount().addActionListener(listener);
-		for (JButton button: myView.getButtonList()) {
-			button.addActionListener(listener);
-			System.out.println();
-		}
+		listener = new ButtonListener();
+		myView.getButtonAddAccount().addActionListener(listener);
+		myView.getButtonAddInterest().addActionListener(listener);
+		myView.getButtonDeposite().addActionListener(listener);
+		myView.getButtonExit().addActionListener(listener);
+		myView.getButtonReport().addActionListener(listener);
+		myView.getButtonWithDraw().addActionListener(listener);
+		
 	}
 	
 	private class ButtonListener implements ActionListener{
@@ -72,10 +75,7 @@ public class DefaultFrmController extends AbstractFrmController{
 	
 	public void buttonPersonalAddAccount_ActionPerformed(ActionEvent event){ 
 		
-		//ICustomer customer = financialFactory.createCustomer(CommonResources.CUSTORMER_PERSON);
-		IAccount account;// = financialFactory.createAccount(CommonResources.ACCOUNT_TYPE_DEFAULT);
-
-		//customer.addAccount(account);
+		IAccount account;
 		Dialog_AddAccount dialogAdd = new Dialog_AddAccount("MyDialog", myView,  financialFactory);
 		dialogAdd.setVisible(true);
 		AccountManager aManager = SingletonFactory.getAccountManager();
